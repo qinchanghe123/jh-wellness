@@ -1,2007 +1,1131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>JH Wellness | Massage & Relaxation in Knoxville, TN</title>
-  <meta
-    name="description"
-    content="JH Wellness in Knoxville, Tennessee offers Swedish Massage, Deep Tissue Massage, Foot Massage and Chair Massage in a calm, private wellness setting."
-  />
-  <meta name="theme-color" content="#06251d" />
+  <meta name="description" content="JH Wellness in Knoxville, TN offers Swedish Massage, Deep Tissue Massage, Foot Massage and Chair Massage in a calm, private wellness setting.">
+  <meta name="theme-color" content="#06251d">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       JH WELLNESS
-       Luxury single-file responsive website
-       ========================================================= */
-
     :root {
-      --green-950: #031913;
-      --green-900: #05251c;
-      --green-850: #073126;
-      --green-800: #0b4032;
-      --green-700: #145641;
-
-      --gold: #c89534;
-      --gold-light: #e1bb6a;
-      --gold-pale: #f1dba9;
-
-      --ivory: #f8f4ea;
-      --cream: #efe8d9;
-      --warm-white: #fffdf8;
-
-      --ink: #10251f;
-      --muted: #6d746f;
-      --line: rgba(200, 149, 52, 0.28);
-
-      --shadow-soft: 0 28px 80px rgba(3, 25, 19, 0.13);
-      --shadow-dark: 0 30px 100px rgba(0, 0, 0, 0.35);
-
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Manrope", Arial, sans-serif;
-
-      --container: 1240px;
-      --header-height: 84px;
+      --green:#05271e;
+      --green2:#0b4032;
+      --dark:#021711;
+      --gold:#c99739;
+      --gold2:#e0bb70;
+      --cream:#f3ede1;
+      --white:#fffdf8;
+      --text:#183028;
+      --muted:#717872;
+      --line:rgba(201,151,57,.27);
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Manrope",Arial,sans-serif;
+      --max:1240px;
+      --header:78px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing:border-box; margin:0; padding:0; }
 
     html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
     }
 
     body {
-      font-family: var(--sans);
-      background: var(--warm-white);
-      color: var(--ink);
-      overflow-x: hidden;
-      line-height: 1.65;
-    }
-
-    body.menu-open {
-      overflow: hidden;
+      font-family:var(--sans);
+      color:var(--text);
+      background:var(--white);
+      line-height:1.65;
+      overflow-x:hidden;
     }
 
     img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      background: #dcd7cc;
+      display:block;
+      width:100%;
+      object-fit:cover;
+      background:#d8d4ca;
     }
 
     a {
-      color: inherit;
-      text-decoration: none;
+      color:inherit;
+      text-decoration:none;
     }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
+    button, input, textarea, select {
+      font:inherit;
     }
 
-    button {
-      border: 0;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--gold-light);
-      outline-offset: 4px;
-    }
-
-    ::selection {
-      color: #fff;
-      background: var(--green-800);
-    }
+    button { cursor:pointer; }
 
     .container {
-      width: min(calc(100% - 40px), var(--container));
-      margin-inline: auto;
+      width:min(calc(100% - 36px),var(--max));
+      margin:auto;
     }
 
     .section {
-      position: relative;
-      padding: clamp(80px, 9vw, 140px) 0;
+      padding:clamp(78px,9vw,135px) 0;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-      color: var(--gold);
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.21em;
-      text-transform: uppercase;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--gold);
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.19em;
+      text-transform:uppercase;
+      margin-bottom:16px;
     }
 
     .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
+      content:"";
+      width:32px;
+      height:1px;
+      background:currentColor;
     }
 
-    .display-title {
-      font-family: var(--serif);
-      font-size: clamp(2.9rem, 6vw, 5.7rem);
-      line-height: 0.95;
-      font-weight: 600;
-      letter-spacing: -0.035em;
+    .title {
+      font-family:var(--serif);
+      font-size:clamp(2.7rem,5.7vw,5rem);
+      line-height:.98;
+      font-weight:600;
+      letter-spacing:-.03em;
     }
 
-    .section-title {
-      max-width: 820px;
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 4.55rem);
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.025em;
-    }
-
-    .section-copy {
-      max-width: 710px;
-      margin-top: 23px;
-      color: #68716c;
-      font-size: clamp(0.96rem, 1.4vw, 1.07rem);
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    /* =========================
-       Buttons
-       ========================= */
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
+    .copy {
+      color:var(--muted);
+      max-width:700px;
+      margin-top:20px;
     }
 
     .btn {
-      min-height: 54px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 23px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.035em;
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
+      min-height:52px;
+      padding:0 23px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      border:1px solid transparent;
+      font-size:.8rem;
+      font-weight:700;
+      transition:.25s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform:translateY(-2px); }
 
     .btn-gold {
-      color: #10261e;
-      background: linear-gradient(135deg, #e7c77d, #c78c27);
-      box-shadow: 0 14px 34px rgba(199, 140, 39, 0.25);
+      background:linear-gradient(135deg,#e6c779,var(--gold));
+      color:#15261f;
+      box-shadow:0 13px 35px rgba(201,151,57,.23);
     }
 
-    .btn-gold:hover {
-      box-shadow: 0 18px 42px rgba(199, 140, 39, 0.36);
+    .btn-light {
+      color:#fff;
+      border-color:rgba(255,255,255,.35);
+      background:rgba(255,255,255,.07);
+      backdrop-filter:blur(10px);
     }
 
-    .btn-outline-light {
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.46);
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(10px);
+    .btn-dark {
+      color:var(--green);
+      border-color:rgba(5,39,30,.2);
+      background:transparent;
     }
 
-    .btn-outline-light:hover {
-      border-color: var(--gold-light);
-      background: rgba(255, 255, 255, 0.13);
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
+      margin-top:30px;
     }
 
-    .btn-outline-dark {
-      color: var(--green-900);
-      border: 1px solid rgba(5, 37, 28, 0.22);
-      background: transparent;
+    /* ================= HEADER ================= */
+
+    header {
+      height:var(--header);
+      position:fixed;
+      inset:0 0 auto;
+      z-index:1000;
+      color:#fff;
+      transition:.3s ease;
     }
 
-    .btn-outline-dark:hover {
-      border-color: var(--gold);
-      background: rgba(200, 149, 52, 0.07);
+    header.scrolled {
+      background:rgba(2,23,17,.94);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(224,187,112,.16);
     }
 
-    .btn svg {
-      width: 17px;
-      height: 17px;
-      flex: 0 0 auto;
-    }
-
-    /* =========================
-       Header / Navigation
-       ========================= */
-
-    .site-header {
-      height: var(--header-height);
-      position: fixed;
-      z-index: 1000;
-      inset: 0 0 auto;
-      color: #fff;
-      transition:
-        background 0.35s ease,
-        box-shadow 0.35s ease,
-        backdrop-filter 0.35s ease;
-    }
-
-    .site-header.scrolled {
-      background: rgba(3, 25, 19, 0.92);
-      backdrop-filter: blur(17px);
-      box-shadow: 0 1px 0 rgba(225, 187, 106, 0.16);
-    }
-
-    .nav-shell {
-      height: 100%;
-      width: min(calc(100% - 34px), 1380px);
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    .nav {
+      width:min(calc(100% - 30px),1380px);
+      height:100%;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex: 0 0 auto;
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      color: var(--gold-light);
-    }
-
-    .brand-copy {
-      line-height: 1;
+      width:39px;
+      color:var(--gold2);
     }
 
     .brand-name {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      display:block;
+      font-family:var(--serif);
+      font-size:1.45rem;
+      font-weight:600;
+      letter-spacing:.05em;
+      line-height:1;
     }
 
     .brand-sub {
-      display: block;
-      margin-top: 5px;
-      color: rgba(255,255,255,.67);
-      font-size: 0.55rem;
-      font-weight: 600;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
+      display:block;
+      margin-top:5px;
+      color:rgba(255,255,255,.55);
+      font-size:.5rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
     }
 
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 2vw, 30px);
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:26px;
     }
 
-    .desktop-nav > a:not(.nav-cta) {
-      position: relative;
-      color: rgba(255, 255, 255, 0.83);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.045em;
+    .nav-links > a {
+      font-size:.73rem;
+      font-weight:600;
+      color:rgba(255,255,255,.83);
     }
 
-    .desktop-nav > a:not(.nav-cta)::after {
-      content: "";
-      height: 1px;
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: -8px;
-      background: var(--gold-light);
-      transition: right 0.25s ease;
+    .nav-contact {
+      display:flex;
+      gap:8px;
     }
 
-    .desktop-nav > a:not(.nav-cta):hover::after {
-      right: 0;
+    .nav-contact .btn {
+      min-height:42px;
+      padding:0 17px;
     }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .menu-btn {
+      display:none;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.2);
+      color:#fff;
+      background:rgba(255,255,255,.08);
     }
 
-    .nav-cta {
-      min-height: 42px;
-      padding: 0 17px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      color: #fff;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      cursor: pointer;
-    }
-
-    .menu-toggle span,
-    .menu-toggle::before,
-    .menu-toggle::after {
-      width: 19px;
-      height: 1px;
-      display: block;
-      margin: 5px auto;
-      background: currentColor;
-      transition: transform .25s ease, opacity .25s ease;
-    }
-
-    .menu-toggle::before,
-    .menu-toggle::after {
-      content: "";
-    }
-
-    .menu-toggle.active span {
-      opacity: 0;
-    }
-
-    .menu-toggle.active::before {
-      transform: translateY(6px) rotate(45deg);
-    }
-
-    .menu-toggle.active::after {
-      transform: translateY(-6px) rotate(-45deg);
+    .menu-btn span,
+    .menu-btn::before,
+    .menu-btn::after {
+      content:"";
+      width:18px;
+      height:1px;
+      background:currentColor;
+      display:block;
+      margin:5px auto;
+      transition:.25s ease;
     }
 
     .mobile-menu {
-      position: fixed;
-      inset: var(--header-height) 0 auto;
-      padding: 22px;
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-16px);
-      color: #fff;
-      background: rgba(3,25,19,.98);
-      border-top: 1px solid rgba(255,255,255,.08);
-      transition: .28s ease;
+      visibility:hidden;
+      opacity:0;
+      position:fixed;
+      inset:var(--header) 0 auto;
+      padding:22px;
+      color:#fff;
+      background:rgba(2,23,17,.98);
+      transform:translateY(-12px);
+      transition:.25s ease;
     }
 
     .mobile-menu.open {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .mobile-menu-inner {
-      width: min(100%, 520px);
-      margin: auto;
-      display: grid;
-      gap: 3px;
+      visibility:visible;
+      opacity:1;
+      transform:none;
     }
 
     .mobile-menu a {
-      padding: 15px 6px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      font-family: var(--serif);
-      font-size: 1.5rem;
+      display:block;
+      padding:13px 3px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+      font-family:var(--serif);
+      font-size:1.4rem;
     }
 
-    .mobile-menu-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding-top: 18px;
-    }
-
-    .mobile-menu-actions a {
-      padding: 0;
-      border: 0;
-      font-family: var(--sans);
-      font-size: .78rem;
-    }
-
-    /* =========================
-       Hero
-       ========================= */
+    /* ================= HERO ================= */
 
     .hero {
-      min-height: 100svh;
-      position: relative;
-      display: grid;
-      align-items: end;
-      color: #fff;
-      background: var(--green-950);
-      overflow: hidden;
-    }
-
-    .hero-slides,
-    .hero-slide,
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
+      min-height:100svh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:var(--dark);
     }
 
     .hero-slide {
-      opacity: 0;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.035);
-      transition:
-        opacity 1.3s ease,
-        transform 8s linear;
+      position:absolute;
+      inset:0;
+      opacity:0;
+      background-position:center;
+      background-size:cover;
+      transform:scale(1.03);
+      transition:opacity 1.2s ease,transform 8s linear;
     }
 
     .hero-slide.active {
-      opacity: 1;
-      transform: scale(1.1);
+      opacity:1;
+      transform:scale(1.1);
     }
 
-    .hero-overlay {
-      z-index: 2;
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(90deg,
-          rgba(2,21,16,.92) 0%,
-          rgba(3,28,21,.72) 42%,
-          rgba(3,28,21,.24) 72%,
-          rgba(3,20,15,.38) 100%
-        ),
-        linear-gradient(0deg,
-          rgba(2,20,15,.84) 0%,
-          transparent 48%
-        );
-    }
-
-    .hero-glow {
-      width: 670px;
-      height: 670px;
-      position: absolute;
-      z-index: 2;
-      left: 38%;
-      top: -340px;
-      border-radius: 50%;
-      background: rgba(206, 158, 59, 0.14);
-      filter: blur(80px);
-      pointer-events: none;
+        linear-gradient(90deg,rgba(1,18,13,.92),rgba(2,27,20,.64) 50%,rgba(2,20,15,.28)),
+        linear-gradient(0deg,rgba(1,18,13,.8),transparent 54%);
     }
 
     .hero-content {
-      position: relative;
-      z-index: 4;
-      width: min(calc(100% - 40px), var(--container));
-      margin: 0 auto;
-      padding: calc(var(--header-height) + 100px) 0 clamp(62px, 8vw, 105px);
+      width:min(calc(100% - 36px),var(--max));
+      margin:auto;
+      position:relative;
+      z-index:3;
+      padding:150px 0 clamp(65px,8vw,105px);
     }
 
-    .hero-copy {
-      max-width: 760px;
+    .hero-copy { max-width:810px; }
+
+    .hero h1 {
+      font-family:var(--serif);
+      font-weight:600;
+      font-size:clamp(4rem,9vw,7.7rem);
+      letter-spacing:-.045em;
+      line-height:.84;
     }
 
-    .hero .eyebrow {
-      color: var(--gold-light);
+    .hero h1 span { color:var(--gold2); }
+
+    .hero p {
+      max-width:640px;
+      margin-top:27px;
+      color:rgba(255,255,255,.74);
+      font-size:clamp(1rem,1.6vw,1.13rem);
     }
 
-    .hero .display-title {
-      max-width: 820px;
-      text-wrap: balance;
+    .trust {
+      max-width:880px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      margin-top:65px;
+      border-block:1px solid rgba(255,255,255,.16);
     }
 
-    .hero-text {
-      max-width: 640px;
-      margin-top: 25px;
-      color: rgba(255,255,255,.77);
-      font-size: clamp(1rem, 1.8vw, 1.17rem);
+    .trust div {
+      padding:19px;
+      border-right:1px solid rgba(255,255,255,.13);
     }
 
-    .hero-trust {
-      margin-top: clamp(46px, 7vw, 85px);
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      max-width: 880px;
-      border-top: 1px solid rgba(255,255,255,.18);
-      border-bottom: 1px solid rgba(255,255,255,.18);
+    .trust div:first-child { padding-left:0; }
+    .trust div:last-child { border:0; }
+
+    .trust strong {
+      display:block;
+      font-family:var(--serif);
+      font-size:1.15rem;
     }
 
-    .trust-item {
-      padding: 20px 19px;
-      border-right: 1px solid rgba(255,255,255,.15);
+    .trust span {
+      display:block;
+      color:rgba(255,255,255,.5);
+      font-size:.66rem;
     }
 
-    .trust-item:first-child {
-      padding-left: 0;
-    }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.18rem;
-      font-weight: 600;
-    }
-
-    .trust-item span {
-      display: block;
-      margin-top: 3px;
-      color: rgba(255,255,255,.55);
-      font-size: .69rem;
-      letter-spacing: .035em;
-    }
-
-    .hero-aside {
-      width: 260px;
-      position: absolute;
-      z-index: 5;
-      right: max(25px, calc((100vw - var(--container))/2));
-      bottom: 84px;
-      padding: 23px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 24px;
-      background: rgba(7,40,31,.55);
-      backdrop-filter: blur(17px);
-    }
-
-    .hero-aside-label {
-      color: var(--gold-light);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .hero-aside strong {
-      display: block;
-      margin-top: 9px;
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      line-height: 1.1;
-      font-weight: 600;
-    }
-
-    .hero-aside p {
-      margin-top: 7px;
-      color: rgba(255,255,255,.65);
-      font-size: .75rem;
-    }
-
-    .hero-dots {
-      position: absolute;
-      z-index: 5;
-      right: 30px;
-      top: 50%;
-      display: grid;
-      gap: 9px;
-      transform: translateY(-50%);
-    }
-
-    .hero-dot {
-      width: 9px;
-      height: 9px;
-      border: 1px solid rgba(255,255,255,.65);
-      border-radius: 50%;
-      background: transparent;
-      cursor: pointer;
-      transition: .25s ease;
-    }
-
-    .hero-dot.active {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      transform: scale(1.25);
-    }
-
-    /* =========================
-       Intro / About
-       ========================= */
+    /* ================= ABOUT ================= */
 
     .about {
       background:
-        radial-gradient(circle at 93% 20%, rgba(200,149,52,.08), transparent 28%),
-        var(--warm-white);
+        radial-gradient(circle at 90% 20%,rgba(201,151,57,.08),transparent 28%),
+        var(--white);
     }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: clamp(50px, 8vw, 110px);
-      align-items: center;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:clamp(50px,8vw,105px);
+      align-items:center;
     }
 
-    .about-visual {
-      min-height: 650px;
-      position: relative;
+    .about-images {
+      min-height:610px;
+      position:relative;
     }
 
-    .about-img-primary {
-      width: 75%;
-      height: 520px;
-      position: absolute;
-      inset: 0 auto auto 0;
-      border-radius: 190px 190px 24px 24px;
-      box-shadow: var(--shadow-soft);
+    .about-images img:first-child {
+      width:75%;
+      height:490px;
+      border-radius:190px 190px 25px 25px;
+      box-shadow:0 25px 70px rgba(5,39,30,.13);
     }
 
-    .about-img-secondary {
-      width: 53%;
-      height: 335px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      border: 10px solid var(--warm-white);
-      border-radius: 24px 24px 160px 24px;
-      box-shadow: var(--shadow-soft);
+    .about-images img:last-child {
+      width:52%;
+      height:310px;
+      position:absolute;
+      right:0;
+      bottom:0;
+      border:8px solid var(--white);
+      border-radius:24px 24px 145px 24px;
+      box-shadow:0 22px 60px rgba(5,39,30,.13);
     }
 
-    .about-emblem {
-      width: 132px;
-      aspect-ratio: 1;
-      position: absolute;
-      right: 2%;
-      top: 11%;
-      z-index: 3;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: var(--gold);
-      background: rgba(255,253,248,.9);
-      box-shadow: 0 20px 50px rgba(5,37,28,.12);
-      backdrop-filter: blur(10px);
+    .feature-list {
+      margin-top:34px;
+      border-top:1px solid #ddd6c8;
     }
 
-    .about-emblem::before {
-      content: "";
-      width: 92%;
-      height: 92%;
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(200,149,52,.28);
+    .feature {
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:15px;
+      padding:21px 0;
+      border-bottom:1px solid #ddd6c8;
     }
 
-    .about-emblem svg {
-      width: 58px;
-      height: 58px;
+    .feature b {
+      color:var(--gold);
+      font-family:var(--serif);
+      font-size:1.4rem;
     }
 
-    .about-copy .section-copy {
-      margin-bottom: 35px;
+    .feature h3 {
+      font-family:var(--serif);
+      font-size:1.45rem;
+      font-weight:600;
     }
 
-    .about-features {
-      display: grid;
-      gap: 0;
-      border-top: 1px solid #ded8cc;
+    .feature p {
+      color:var(--muted);
+      font-size:.84rem;
     }
 
-    .about-feature {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 18px;
-      padding: 22px 0;
-      border-bottom: 1px solid #ded8cc;
-    }
-
-    .feature-number {
-      color: var(--gold);
-      font-family: var(--serif);
-      font-size: 1.4rem;
-    }
-
-    .about-feature h3 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .about-feature p {
-      margin-top: 3px;
-      color: #747b76;
-      font-size: .86rem;
-    }
-
-    /* =========================
-       Experience
-       ========================= */
+    /* ================= EXPERIENCE ================= */
 
     .experience {
-      color: #fff;
+      color:#fff;
       background:
-        radial-gradient(circle at 18% 0%, rgba(210,159,59,.13), transparent 30%),
-        linear-gradient(145deg, #031812, #073227);
+        radial-gradient(circle at 10% 0,rgba(201,151,57,.14),transparent 25%),
+        linear-gradient(145deg,#031913,#073328);
     }
 
-    .experience-heading {
-      display: grid;
-      grid-template-columns: 1fr .7fr;
-      gap: 60px;
-      align-items: end;
-    }
+    .experience .copy { color:rgba(255,255,255,.58); }
 
-    .experience .section-copy {
-      color: rgba(255,255,255,.61);
-    }
-
-    .experience-cards {
-      margin-top: 62px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 28px;
-      overflow: hidden;
+    .experience-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      margin-top:55px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
     }
 
     .experience-card {
-      min-height: 310px;
-      padding: 36px 28px;
-      position: relative;
-      border-right: 1px solid rgba(255,255,255,.11);
-      background: rgba(255,255,255,.025);
-      transition: background .3s ease;
+      padding:34px 27px;
+      min-height:270px;
+      border-right:1px solid rgba(255,255,255,.1);
     }
 
-    .experience-card:last-child {
-      border-right: 0;
-    }
+    .experience-card:last-child { border:0; }
 
-    .experience-card:hover {
-      background: rgba(255,255,255,.055);
-    }
-
-    .experience-index {
-      color: rgba(225,187,106,.78);
-      font-family: var(--serif);
-      font-size: 1.25rem;
-    }
-
-    .experience-icon {
-      width: 42px;
-      height: 42px;
-      margin: 47px 0 20px;
-      color: var(--gold-light);
+    .experience-card small {
+      color:var(--gold2);
+      font-family:var(--serif);
+      font-size:1.2rem;
     }
 
     .experience-card h3 {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 600;
+      margin-top:60px;
+      font-family:var(--serif);
+      font-size:1.75rem;
+      font-weight:600;
     }
 
     .experience-card p {
-      margin-top: 10px;
-      color: rgba(255,255,255,.57);
-      font-size: .84rem;
-      line-height: 1.75;
+      margin-top:8px;
+      color:rgba(255,255,255,.54);
+      font-size:.82rem;
     }
 
-    /* =========================
-       Services
-       ========================= */
+    /* ================= SERVICES ================= */
 
-    .services {
-      background: #f4efe4;
-    }
+    .services { background:var(--cream); }
 
-    .services-intro {
-      display: grid;
-      grid-template-columns: 1fr .56fr;
-      gap: 50px;
-      align-items: end;
-    }
-
-    .pricing-note {
-      padding: 21px 23px;
-      border-left: 2px solid var(--gold);
-      color: #74746c;
-      background: rgba(255,255,255,.5);
-      font-size: .82rem;
-    }
-
-    .pricing-note strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--green-900);
-    }
-
-    .services-grid {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 24px;
+    .service-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:24px;
+      margin-top:55px;
     }
 
     .service-card {
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid rgba(5,37,28,.09);
-      border-radius: 30px;
-      background: var(--warm-white);
-      box-shadow: 0 12px 45px rgba(5,37,28,.06);
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 25px 60px rgba(5,37,28,.11);
+      min-width:0;
+      overflow:hidden;
+      border-radius:29px;
+      background:var(--white);
+      border:1px solid rgba(5,39,30,.07);
+      box-shadow:0 14px 45px rgba(5,39,30,.07);
     }
 
     .service-media {
-      height: clamp(280px, 34vw, 405px);
-      position: relative;
-      overflow: hidden;
-      background: var(--green-850);
+      height:390px;
+      position:relative;
+      overflow:hidden;
+      background:var(--green);
     }
 
-    .service-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity .8s ease;
+    .slide {
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition:opacity .8s ease;
     }
 
-    .service-slide.active {
-      opacity: 1;
-    }
+    .slide.active { opacity:1; }
 
-    .service-slide img {
-      height: 100%;
+    .slide img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     .service-media::after {
-      content: "";
-      position: absolute;
-      z-index: 3;
-      inset: auto 0 0;
-      height: 42%;
-      pointer-events: none;
-      background: linear-gradient(transparent, rgba(2,20,15,.42));
-    }
-
-    .carousel-controls {
-      position: absolute;
-      z-index: 5;
-      right: 18px;
-      bottom: 18px;
-      display: flex;
-      gap: 7px;
-    }
-
-    .carousel-btn {
-      width: 39px;
-      height: 39px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: #fff;
-      background: rgba(4,31,24,.55);
-      border: 1px solid rgba(255,255,255,.38);
-      backdrop-filter: blur(10px);
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .carousel-btn:hover {
-      color: #13251e;
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-    }
-
-    .carousel-btn svg {
-      width: 15px;
-      height: 15px;
+      content:"";
+      position:absolute;
+      z-index:2;
+      inset:55% 0 0;
+      pointer-events:none;
+      background:linear-gradient(transparent,rgba(2,23,17,.52));
     }
 
     .carousel-count {
-      position: absolute;
-      z-index: 5;
-      left: 19px;
-      bottom: 20px;
-      color: rgba(255,255,255,.87);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .12em;
+      position:absolute;
+      z-index:5;
+      left:17px;
+      bottom:18px;
+      color:#fff;
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.11em;
     }
 
-    /* Branded art fallback:
-       The supplied image pool does not contain a Swedish-specific category,
-       so a branded visual is used instead of mixing another massage type. */
-
-    .swedish-art {
-      height: 100%;
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: #fff;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(225,187,106,.24), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(225,187,106,.12), transparent 30%),
-        linear-gradient(145deg, #082e24, #031913);
+    .carousel-controls {
+      position:absolute;
+      z-index:5;
+      right:17px;
+      bottom:15px;
+      display:flex;
+      gap:6px;
     }
 
-    .swedish-art::before,
-    .swedish-art::after {
-      content: "";
-      width: 390px;
-      height: 390px;
-      position: absolute;
-      border: 1px solid rgba(225,187,106,.18);
-      border-radius: 50%;
-    }
-
-    .swedish-art::before {
-      transform: translate(-43%, -23%);
-    }
-
-    .swedish-art::after {
-      transform: translate(43%, 23%);
-    }
-
-    .swedish-art-inner {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-
-    .swedish-art-inner svg {
-      width: 90px;
-      color: var(--gold-light);
-    }
-
-    .swedish-art-inner strong {
-      display: block;
-      margin-top: 22px;
-      font-family: var(--serif);
-      font-size: clamp(2rem,4vw,3rem);
-      font-weight: 600;
-    }
-
-    .swedish-art-inner span {
-      display: block;
-      margin-top: 8px;
-      color: rgba(255,255,255,.56);
-      font-size: .68rem;
-      letter-spacing: .17em;
-      text-transform: uppercase;
+    .carousel-controls button {
+      width:39px;
+      height:39px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.38);
+      color:#fff;
+      background:rgba(2,23,17,.55);
+      backdrop-filter:blur(10px);
     }
 
     .service-body {
-      padding: clamp(25px, 4vw, 38px);
+      padding:clamp(24px,4vw,36px);
     }
 
-    .service-topline {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 20px;
+    .service-head {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:18px;
     }
 
-    .service-kicker {
-      color: var(--gold);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
+    .service-label {
+      color:var(--gold);
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
 
     .service-title {
-      margin-top: 5px;
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1;
-      font-weight: 600;
+      margin-top:5px;
+      font-family:var(--serif);
+      font-size:clamp(2rem,4vw,2.75rem);
+      line-height:1;
+      font-weight:600;
     }
 
-    .service-badge {
-      flex: 0 0 auto;
-      padding: 8px 11px;
-      border-radius: 999px;
-      color: var(--green-800);
-      background: #eee6d5;
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .04em;
+    .duration-badge {
+      flex:0 0 auto;
+      padding:8px 11px;
+      border-radius:999px;
+      color:var(--green);
+      background:#eee5d4;
+      font-size:.62rem;
+      font-weight:700;
     }
 
-    .service-description {
-      margin-top: 20px;
-      color: #6e7771;
-      font-size: .9rem;
+    .service-desc {
+      margin-top:19px;
+      color:var(--muted);
+      font-size:.88rem;
     }
 
     .benefits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:18px;
     }
 
-    .benefit {
-      padding: 7px 10px;
-      border: 1px solid rgba(5,37,28,.11);
-      border-radius: 999px;
-      color: #51615b;
-      font-size: .66rem;
-      background: #faf8f1;
+    .benefits span {
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(5,39,30,.1);
+      color:#58665f;
+      background:#faf8f2;
+      font-size:.63rem;
     }
 
-    .price-table {
-      margin-top: 27px;
-      overflow: hidden;
-      border: 1px solid #e4ded2;
-      border-radius: 18px;
+    .prices {
+      margin-top:24px;
+      overflow:hidden;
+      border:1px solid #e2dccf;
+      border-radius:17px;
     }
 
     .price-row {
-      min-height: 52px;
-      display: grid;
-      grid-template-columns: minmax(0,1fr) 90px 90px;
-      align-items: center;
-      border-bottom: 1px solid #e9e3d8;
+      min-height:51px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 85px 85px;
+      align-items:center;
+      border-bottom:1px solid #e7e1d6;
     }
 
-    .price-row:last-child {
-      border-bottom: 0;
+    .price-row:last-child { border-bottom:0; }
+
+    .price-row.head {
+      min-height:39px;
+      color:#858a86;
+      background:#f1ede5;
+      font-size:.6rem;
+      font-weight:700;
+      letter-spacing:.09em;
+      text-transform:uppercase;
     }
 
-    .price-row.price-head {
-      min-height: 40px;
-      color: #858a86;
-      background: #f4f0e8;
-      font-size: .63rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
+    .price-row span { padding:0 13px; }
 
-    .price-row > span {
-      padding: 0 16px;
-    }
-
-    .price-row .duration {
-      color: #34443e;
-      font-size: .82rem;
-      font-weight: 600;
-    }
-
-    .price-row .amount {
-      border-left: 1px solid #e9e3d8;
-      color: var(--green-900);
-      font-family: var(--serif);
-      font-size: 1.22rem;
-      font-weight: 700;
-      text-align: center;
+    .price-row .money {
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-left:1px solid #e7e1d6;
+      color:var(--green);
+      font-family:var(--serif);
+      font-size:1.18rem;
+      font-weight:700;
     }
 
     .service-actions {
-      display: flex;
-      gap: 9px;
-      margin-top: 24px;
+      display:flex;
+      gap:9px;
+      margin-top:23px;
     }
 
-    .service-actions .btn {
-      flex: 1 1 0;
-      min-width: 0;
-    }
+    .service-actions .btn { flex:1; }
 
-    /* =========================
-       Gallery
-       ========================= */
-
-    .gallery {
-      overflow: hidden;
-      background: var(--warm-white);
-    }
-
-    .gallery-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      align-items: end;
-    }
-
-    .gallery-top p {
-      width: min(100%, 410px);
-      color: #737a75;
-      font-size: .89rem;
-    }
+    /* ================= GALLERY ================= */
 
     .gallery-grid {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: 1.18fr .82fr .82fr;
-      grid-template-rows: 265px 265px;
-      gap: 14px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr .85fr;
+      grid-template-rows:260px 260px;
+      gap:13px;
+      margin-top:50px;
     }
 
     .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      background: #ddd;
+      position:relative;
+      overflow:hidden;
+      border-radius:21px;
     }
 
-    .gallery-item:first-child {
-      grid-row: 1 / span 2;
-    }
-
-    .gallery-item:nth-child(4) {
-      grid-column: 2 / span 2;
-    }
+    .gallery-item:first-child { grid-row:1 / span 2; }
+    .gallery-item:nth-child(4) { grid-column:2 / span 2; }
 
     .gallery-item img {
-      height: 100%;
-      transition: transform .75s cubic-bezier(.2,.65,.3,1);
+      height:100%;
+      transition:transform .7s ease;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.045);
-    }
+    .gallery-item:hover img { transform:scale(1.04); }
 
-    .gallery-caption {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 18px;
-      z-index: 2;
-      color: #fff;
-      font-family: var(--serif);
-      font-size: 1.35rem;
-    }
+    /* ================= CONTACT CTA ================= */
 
-    .gallery-item::after {
-      content: "";
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(2,20,15,.65));
-    }
-
-    /* =========================
-       Contact CTA
-       ========================= */
-
-    .contact-cta {
-      padding: 0 0 clamp(90px,10vw,150px);
-      background: var(--warm-white);
-    }
-
-    .contact-panel {
-      overflow: hidden;
-      position: relative;
-      padding: clamp(45px, 7vw, 85px);
-      border-radius: 34px;
-      color: #fff;
+    .cta-panel {
+      padding:clamp(45px,7vw,80px);
+      border-radius:33px;
+      color:#fff;
       background:
-        radial-gradient(circle at 85% 15%, rgba(225,187,106,.18), transparent 28%),
-        linear-gradient(145deg,#05291f,#031913);
-      box-shadow: var(--shadow-dark);
+        radial-gradient(circle at 90% 0,rgba(224,187,112,.16),transparent 30%),
+        linear-gradient(140deg,#073126,var(--dark));
     }
 
-    .contact-panel::after {
-      content: "";
-      width: 450px;
-      height: 450px;
-      position: absolute;
-      right: -160px;
-      bottom: -260px;
-      border-radius: 50%;
-      border: 1px solid rgba(225,187,106,.14);
-      box-shadow:
-        0 0 0 60px rgba(225,187,106,.025),
-        0 0 0 120px rgba(225,187,106,.018);
+    .cta-grid {
+      display:grid;
+      grid-template-columns:1fr .65fr;
+      gap:55px;
+      align-items:center;
     }
 
-    .contact-panel-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.1fr .75fr;
-      gap: 60px;
-      align-items: center;
+    .cta-panel .copy { color:rgba(255,255,255,.58); }
+
+    .phone-display {
+      margin-top:20px;
+      color:var(--gold2);
+      font-family:var(--serif);
+      font-size:clamp(2rem,4vw,3.3rem);
     }
 
-    .contact-panel .section-title {
-      max-width: 700px;
+    .cta-buttons {
+      display:grid;
+      gap:11px;
     }
 
-    .contact-panel p {
-      max-width: 650px;
-      margin-top: 18px;
-      color: rgba(255,255,255,.62);
-    }
-
-    .contact-direct {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-direct .btn {
-      min-height: 62px;
-      width: 100%;
-    }
-
-    .contact-phone {
-      margin-top: 14px;
-      color: var(--gold-light);
-      font-family: var(--serif);
-      font-size: clamp(2rem,4vw,3.2rem);
-      line-height: 1;
-    }
-
-    /* =========================
-       Reviews
-       ========================= */
+    /* ================= REVIEWS ================= */
 
     .reviews {
-      color: #fff;
-      background: #082d23;
-      overflow: hidden;
+      overflow:hidden;
+      color:#fff;
+      background:#082e24;
     }
 
-    .reviews-heading {
-      text-align: center;
-    }
+    .reviews .heading { text-align:center; }
+    .reviews .heading .eyebrow { justify-content:center; }
+    .reviews .heading .title { margin:auto; }
 
-    .reviews-heading .eyebrow {
-      justify-content: center;
-      color: var(--gold-light);
-    }
-
-    .reviews-heading .eyebrow::after {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-    }
-
-    .reviews-heading .section-title {
-      margin-inline: auto;
-    }
-
-    .review-disclaimer {
-      max-width: 720px;
-      margin: 18px auto 0;
-      color: rgba(255,255,255,.52);
-      font-size: .72rem;
+    .review-note {
+      max-width:700px;
+      margin:15px auto 0;
+      color:rgba(255,255,255,.42);
+      font-size:.68rem;
     }
 
     .review-rows {
-      margin-top: 55px;
-      display: grid;
-      gap: 14px;
+      display:grid;
+      gap:14px;
+      margin-top:50px;
     }
 
     .review-row {
-      width: 100%;
-      overflow: hidden;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
     }
 
     .review-track {
-      width: max-content;
-      display: flex;
-      gap: 14px;
-      will-change: transform;
-      animation: review-left 44s linear infinite;
+      display:flex;
+      gap:14px;
+      width:max-content;
+      animation:moveLeft 48s linear infinite;
     }
 
     .review-row.reverse .review-track {
-      animation-name: review-right;
-      animation-duration: 49s;
+      animation-name:moveRight;
+      animation-duration:52s;
     }
 
-    .review-row:hover .review-track {
-      animation-play-state: paused;
+    @keyframes moveLeft {
+      to { transform:translateX(-50%); }
     }
 
-    .review-group {
-      display: flex;
-      gap: 14px;
+    @keyframes moveRight {
+      from { transform:translateX(-50%); }
+      to { transform:translateX(0); }
     }
 
-    @keyframes review-left {
-      to { transform: translateX(calc(-50% - 7px)); }
-    }
-
-    @keyframes review-right {
-      from { transform: translateX(calc(-50% - 7px)); }
-      to { transform: translateX(0); }
+    .review-set {
+      display:flex;
+      gap:14px;
     }
 
     .review-card {
-      width: min(390px, 78vw);
-      min-height: 188px;
-      padding: 26px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      background: rgba(255,255,255,.055);
+      width:min(370px,78vw);
+      min-height:180px;
+      padding:25px;
+      border-radius:21px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.05);
     }
 
-    .review-stars {
-      color: var(--gold-light);
-      font-size: .73rem;
-      letter-spacing: .16em;
+    .stars {
+      color:var(--gold2);
+      letter-spacing:.13em;
+      font-size:.7rem;
     }
 
     .review-card blockquote {
-      margin-top: 14px;
-      color: rgba(255,255,255,.79);
-      font-family: var(--serif);
-      font-size: 1.22rem;
-      line-height: 1.38;
+      margin-top:13px;
+      color:rgba(255,255,255,.76);
+      font-family:var(--serif);
+      font-size:1.18rem;
+      line-height:1.4;
     }
 
-    .review-card span {
-      display: block;
-      margin-top: 16px;
-      color: rgba(255,255,255,.43);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .review-card small {
+      display:block;
+      margin-top:15px;
+      color:rgba(255,255,255,.4);
+      font-size:.6rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
     }
 
-    /* =========================
-       FAQ
-       ========================= */
+    /* ================= FAQ ================= */
 
-    .faq {
-      background: #f4efe4;
+    .faq { background:var(--cream); }
+
+    .faq-grid {
+      display:grid;
+      grid-template-columns:.7fr 1.15fr;
+      gap:clamp(45px,8vw,110px);
     }
 
-    .faq-layout {
-      display: grid;
-      grid-template-columns: .7fr 1.15fr;
-      gap: clamp(50px,9vw,120px);
-    }
+    .faq-list { border-top:1px solid #d5cdbc; }
 
-    .faq-intro {
-      position: sticky;
-      top: 120px;
-      align-self: start;
-    }
-
-    .faq-list {
-      border-top: 1px solid #d5cdbd;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #d5cdbd;
-    }
+    .faq-item { border-bottom:1px solid #d5cdbc; }
 
     .faq-question {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 44px;
-      gap: 20px;
-      align-items: center;
-      padding: 27px 0;
-      text-align: left;
-      color: var(--green-900);
-      background: transparent;
-      cursor: pointer;
+      width:100%;
+      padding:25px 0;
+      display:grid;
+      grid-template-columns:1fr 38px;
+      gap:18px;
+      align-items:center;
+      border:0;
+      color:var(--green);
+      background:transparent;
+      text-align:left;
     }
 
-    .faq-question span:first-child {
-      font-family: var(--serif);
-      font-size: clamp(1.35rem,2.4vw,1.75rem);
-      font-weight: 600;
+    .faq-question strong {
+      font-family:var(--serif);
+      font-size:clamp(1.3rem,2vw,1.7rem);
+      font-weight:600;
     }
 
-    .faq-plus {
-      width: 38px;
-      height: 38px;
-      position: relative;
-      border: 1px solid rgba(5,37,28,.17);
-      border-radius: 50%;
-    }
-
-    .faq-plus::before,
-    .faq-plus::after {
-      content: "";
-      width: 13px;
-      height: 1px;
-      position: absolute;
-      left: 12px;
-      top: 18px;
-      background: currentColor;
-      transition: transform .25s ease;
-    }
-
-    .faq-plus::after {
-      transform: rotate(90deg);
-    }
-
-    .faq-question[aria-expanded="true"] .faq-plus::after {
-      transform: rotate(0);
+    .plus {
+      width:36px;
+      height:36px;
+      border:1px solid rgba(5,39,30,.18);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-size:1.3rem;
     }
 
     .faq-answer {
-      padding: 0 65px 27px 0;
-      color: #6f766f;
-      font-size: .9rem;
+      padding:0 50px 25px 0;
+      color:var(--muted);
+      font-size:.87rem;
     }
 
-    /* =========================
-       Location
-       ========================= */
-
-    .location {
-      padding-bottom: 0;
-      background: var(--warm-white);
-    }
+    /* ================= LOCATION ================= */
 
     .location-grid {
-      display: grid;
-      grid-template-columns: .77fr 1.23fr;
-      min-height: 640px;
+      display:grid;
+      grid-template-columns:.78fr 1.22fr;
     }
 
     .location-info {
-      padding:
-        clamp(65px,8vw,105px)
-        clamp(30px,6vw,90px)
-        clamp(65px,8vw,105px)
-        max(30px, calc((100vw - var(--container))/2));
-      color: #fff;
+      padding:clamp(60px,8vw,100px);
+      color:#fff;
       background:
-        radial-gradient(circle at 15% 10%, rgba(225,187,106,.15), transparent 25%),
-        var(--green-950);
+        radial-gradient(circle at 10% 0,rgba(224,187,112,.14),transparent 30%),
+        var(--dark);
     }
 
-    .location-info .section-title {
-      font-size: clamp(2.7rem,5vw,4.4rem);
+    .details {
+      margin-top:35px;
+      border-top:1px solid rgba(255,255,255,.12);
     }
 
-    .location-details {
-      margin-top: 40px;
-      display: grid;
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,.13);
+    .detail-row {
+      display:grid;
+      grid-template-columns:95px 1fr;
+      gap:18px;
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,.12);
     }
 
-    .location-row {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 18px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,.13);
+    .detail-row b {
+      color:var(--gold2);
+      font-size:.6rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .location-label {
-      color: var(--gold-light);
-      font-size: .63rem;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+    .detail-row span {
+      color:rgba(255,255,255,.72);
+      font-size:.84rem;
     }
 
-    .location-value {
-      color: rgba(255,255,255,.75);
-      font-size: .87rem;
+    iframe {
+      display:block;
+      width:100%;
+      height:100%;
+      min-height:620px;
+      border:0;
     }
 
-    .location-map {
-      min-height: 550px;
-      background: #dedbd4;
+    /* ================= FOOTER ================= */
+
+    footer {
+      color:rgba(255,255,255,.6);
+      background:#01110d;
     }
 
-    .location-map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 640px;
-      display: block;
-      border: 0;
-      filter: saturate(.7) contrast(.95);
+    .footer-grid {
+      padding:55px 0;
+      display:grid;
+      grid-template-columns:1fr .5fr .7fr;
+      gap:45px;
     }
 
-    /* =========================
-       Footer
-       ========================= */
-
-    .footer {
-      color: rgba(255,255,255,.66);
-      background: #02120e;
+    footer h3 {
+      color:var(--gold2);
+      font-size:.62rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      margin-bottom:13px;
     }
 
-    .footer-main {
-      padding: 60px 0 44px;
-      display: grid;
-      grid-template-columns: 1fr .55fr .7fr;
-      gap: 50px;
+    footer nav,
+    .footer-contact {
+      display:grid;
+      gap:8px;
+      font-size:.77rem;
     }
 
-    .footer-brand .brand {
-      color: #fff;
+    .copyright {
+      padding:19px 0;
+      border-top:1px solid rgba(255,255,255,.09);
+      font-size:.65rem;
     }
 
-    .footer-brand p {
-      max-width: 430px;
-      margin-top: 20px;
-      font-size: .8rem;
-    }
-
-    .footer h3 {
-      margin-bottom: 15px;
-      color: var(--gold-light);
-      font-size: .65rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 8px;
-    }
-
-    .footer-links a {
-      font-size: .8rem;
-      transition: color .2s ease;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      border-top: 1px solid rgba(255,255,255,.1);
-      font-size: .68rem;
-    }
-
-    /* =========================
-       Mobile Call / Text Bar
-       ========================= */
-
-    .mobile-action-bar {
-      display: none;
-      position: fixed;
-      z-index: 1100;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      gap: 8px;
-      padding: 8px;
-      border: 1px solid rgba(225,187,106,.2);
-      border-radius: 18px;
-      background: rgba(3,25,19,.94);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 15px 45px rgba(0,0,0,.32);
-    }
-
-    .mobile-action-bar a {
-      min-height: 49px;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 12px;
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .mobile-call {
-      color: #13251e;
-      background: linear-gradient(135deg,var(--gold-light),var(--gold));
-    }
-
-    .mobile-text {
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.07);
-    }
-
-    /* =========================
-       Scroll reveal
-       ========================= */
+    /* ================= REVEAL ================= */
 
     .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.7,.2,1);
+      opacity:0;
+      transform:translateY(23px);
+      transition:.75s ease;
     }
 
     .reveal.visible {
-      opacity: 1;
-      transform: none;
+      opacity:1;
+      transform:none;
     }
 
-    /* =========================
-       Tablet
-       ========================= */
+    /* ================= MOBILE FIXED CTA ================= */
 
-    @media (max-width: 1050px) {
-      .desktop-nav > a:not(.nav-cta) {
-        display: none;
+    .mobile-bar {
+      display:none;
+      position:fixed;
+      z-index:1200;
+      left:9px;
+      right:9px;
+      bottom:9px;
+      padding:7px;
+      gap:7px;
+      border-radius:16px;
+      background:rgba(2,23,17,.95);
+      border:1px solid rgba(224,187,112,.19);
+      backdrop-filter:blur(16px);
+    }
+
+    .mobile-bar a {
+      flex:1;
+      min-height:49px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:11px;
+      font-size:.76rem;
+      font-weight:700;
+    }
+
+    .mobile-bar a:first-child {
+      color:#13241e;
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+    }
+
+    .mobile-bar a:last-child {
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1050px) {
+      .nav-links { display:none; }
+      .nav-contact .btn { display:none; }
+      .menu-btn { display:block; }
+
+      .about-grid,
+      .faq-grid,
+      .cta-grid {
+        grid-template-columns:1fr;
       }
 
-      .menu-toggle {
-        display: block;
+      .experience-grid {
+        grid-template-columns:1fr 1fr;
       }
 
-      .nav-actions .nav-cta {
-        display: none;
-      }
-
-      .hero-aside {
-        display: none;
-      }
-
-      .hero-copy {
-        max-width: 740px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-visual {
-        max-width: 720px;
-        width: 100%;
-        min-height: 580px;
-      }
-
-      .experience-heading,
-      .services-intro {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .experience-cards {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .experience-card:nth-child(2) {
-        border-right: 0;
-      }
-
+      .experience-card:nth-child(2) { border-right:0; }
       .experience-card:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,.11);
+        border-bottom:1px solid rgba(255,255,255,.1);
       }
+
+      .location-grid { grid-template-columns:1fr; }
 
       .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 330px 240px 240px;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:320px 230px 230px;
       }
 
       .gallery-item:first-child {
-        grid-column: 1 / span 2;
-        grid-row: auto;
+        grid-column:1 / span 2;
+        grid-row:auto;
       }
 
       .gallery-item:nth-child(4) {
-        grid-column: 1 / span 2;
-      }
-
-      .contact-panel-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-direct {
-        max-width: 500px;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .faq-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .faq-intro {
-        position: static;
-      }
-
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .location-info {
-        padding-left: max(24px, calc((100vw - 900px)/2));
-      }
-
-      .location-map,
-      .location-map iframe {
-        min-height: 500px;
+        grid-column:1 / span 2;
       }
     }
 
-    /* =========================
-       Mobile
-       ========================= */
+    @media(max-width:760px) {
+      :root { --header:70px; }
 
-    @media (max-width: 760px) {
-      :root {
-        --header-height: 72px;
+      body { padding-bottom:74px; }
+
+      .hero h1 {
+        font-size:clamp(3.7rem,17vw,5.2rem);
       }
 
-      body {
-        padding-bottom: 76px;
+      .trust {
+        grid-template-columns:1fr 1fr;
       }
 
-      .container {
-        width: min(calc(100% - 28px), var(--container));
+      .trust div:nth-child(2) { border-right:0; }
+      .trust div:nth-child(-n+2) {
+        border-bottom:1px solid rgba(255,255,255,.13);
       }
 
-      .site-header {
-        height: var(--header-height);
+      .about-images { min-height:465px; }
+
+      .about-images img:first-child {
+        width:82%;
+        height:390px;
       }
 
-      .nav-shell {
-        width: calc(100% - 25px);
+      .about-images img:last-child {
+        height:240px;
       }
 
-      .brand-mark {
-        width: 35px;
-        height: 35px;
-      }
-
-      .brand-name {
-        font-size: 1.28rem;
-      }
-
-      .brand-sub {
-        font-size: .47rem;
-      }
-
-      .hero-content {
-        width: calc(100% - 28px);
-        padding-top: 125px;
-        padding-bottom: 55px;
-      }
-
-      .hero .display-title {
-        font-size: clamp(3.5rem, 16vw, 5rem);
-      }
-
-      .hero-text {
-        max-width: 92%;
-      }
-
-      .hero-trust {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .trust-item {
-        border-bottom: 1px solid rgba(255,255,255,.15);
-      }
-
-      .trust-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .trust-item:nth-last-child(-n+2) {
-        border-bottom: 0;
-      }
-
-      .trust-item:nth-child(3) {
-        padding-left: 0;
-      }
-
-      .hero-dots {
-        display: none;
-      }
-
-      .button-row .btn {
-        flex: 1 1 145px;
-      }
-
-      .about-visual {
-        min-height: 470px;
-      }
-
-      .about-img-primary {
-        width: 82%;
-        height: 395px;
-      }
-
-      .about-img-secondary {
-        width: 57%;
-        height: 245px;
-        border-width: 7px;
-      }
-
-      .about-emblem {
-        width: 95px;
-        top: 8%;
-      }
-
-      .about-emblem svg {
-        width: 43px;
-      }
-
-      .experience-cards {
-        grid-template-columns: 1fr;
+      .experience-grid,
+      .service-grid {
+        grid-template-columns:1fr;
       }
 
       .experience-card {
-        min-height: auto;
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.11);
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.1);
       }
 
-      .experience-card:last-child {
-        border-bottom: 0;
-      }
+      .service-media { height:300px; }
 
-      .experience-icon {
-        margin-top: 34px;
-      }
+      .service-head { display:block; }
 
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-media {
-        height: 295px;
-      }
-
-      .service-topline {
-        display: block;
-      }
-
-      .service-badge {
-        display: inline-block;
-        margin-top: 13px;
-      }
-
-      .price-row {
-        grid-template-columns: minmax(0,1fr) 78px 78px;
-      }
-
-      .price-row > span {
-        padding-inline: 10px;
+      .duration-badge {
+        display:inline-block;
+        margin-top:12px;
       }
 
       .service-actions {
-        flex-direction: column;
+        flex-direction:column;
       }
 
-      .gallery-top {
-        display: block;
-      }
-
-      .gallery-top p {
-        margin-top: 18px;
+      .price-row {
+        grid-template-columns:minmax(0,1fr) 73px 73px;
       }
 
       .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:none;
       }
 
       .gallery-item,
       .gallery-item:first-child,
       .gallery-item:nth-child(4) {
-        grid-column: auto;
-        grid-row: auto;
-        height: 290px;
+        grid-column:auto;
+        grid-row:auto;
+        height:280px;
       }
 
-      .gallery-item:first-child {
-        height: 390px;
+      .gallery-item:first-child { height:380px; }
+
+      .footer-grid {
+        grid-template-columns:1fr;
       }
 
-      .contact-panel {
-        width: calc(100% - 20px);
-        margin-inline: auto;
-        border-radius: 26px;
-      }
-
-      .contact-direct {
-        grid-template-columns: 1fr;
-      }
-
-      .faq-answer {
-        padding-right: 10px;
-      }
-
-      .location-info {
-        padding-inline: 22px;
-      }
-
-      .location-row {
-        grid-template-columns: 82px 1fr;
-      }
-
-      .footer-main {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-
-      .mobile-action-bar {
-        display: flex;
-      }
+      .mobile-bar { display:flex; }
     }
 
-    @media (max-width: 420px) {
-      .hero-trust {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .trust-item {
-        padding: 16px 11px;
-      }
-
-      .trust-item strong {
-        font-size: 1rem;
-      }
-
-      .price-row {
-        grid-template-columns: minmax(0,1fr) 69px 69px;
-      }
-
-      .price-row .amount {
-        font-size: 1.05rem;
-      }
-
-      .price-row > span {
-        padding-inline: 7px;
-      }
-
-      .service-body {
-        padding-inline: 20px;
-      }
-
-      .mobile-menu-actions {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
+    @media(prefers-reduced-motion:reduce) {
       *,
       *::before,
       *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+        animation-duration:.01ms !important;
+        transition-duration:.01ms !important;
       }
 
       .reveal {
-        opacity: 1;
-        transform: none;
+        opacity:1;
+        transform:none;
       }
     }
   </style>
@@ -2009,1478 +1133,1265 @@
 
 <body>
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
-  <header class="site-header" id="siteHeader">
-    <div class="nav-shell">
-      <a class="brand" href="#home" aria-label="JH Wellness home">
-        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M32 47C22 40 18 29 20 15c9 4 14 12 12 24 0-12 5-20 14-24 2 14-2 25-14 32Z"
-                stroke="currentColor" stroke-width="2"/>
-          <path d="M31.7 45C24 44 15 38 10 29c10-1 17 3 22 13M32.3 45C40 44 49 38 54 29c-10-1-17 3-22 13"
-                stroke="currentColor" stroke-width="2"/>
-          <path d="M13 51c11-6 27-6 38 0" stroke="currentColor" stroke-width="2"/>
-          <circle cx="32" cy="8" r="2.7" fill="currentColor"/>
-        </svg>
+<header id="header">
+  <div class="nav">
 
-        <span class="brand-copy">
+    <a class="brand" href="#home">
+      <svg class="brand-mark" viewBox="0 0 64 64" fill="none">
+        <path d="M32 47C22 40 18 29 20 15c9 4 14 12 12 24 0-12 5-20 14-24 2 14-2 25-14 32Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M31 45C23 44 15 38 10 29c10-1 17 3 22 13M33 45c8-1 16-7 21-16-10-1-17 3-22 13" stroke="currentColor" stroke-width="2"/>
+        <path d="M13 51c11-6 27-6 38 0" stroke="currentColor" stroke-width="2"/>
+        <circle cx="32" cy="8" r="2.5" fill="currentColor"/>
+      </svg>
+
+      <span>
+        <span class="brand-name">JH WELLNESS</span>
+        <span class="brand-sub">Massage · Wellness · Relaxation</span>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-contact">
+      <a class="btn btn-gold" href="tel:+18659855888">Call</a>
+      <a class="btn btn-light" href="sms:+18659855888">Text</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18659855888">Call 865-985-5888</a>
+    <a href="sms:+18659855888">Send a Text</a>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <!-- Swedish Massage -->
+    <div class="hero-slide active"
+         style="background-image:url('https://perfectlondonmassage.co.uk/wp-content/uploads/2024/02/swedish-massage-london.webp')">
+    </div>
+
+    <!-- Deep Tissue -->
+    <div class="hero-slide"
+         style="background-image:url('https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg')">
+    </div>
+
+    <!-- Foot Massage -->
+    <div class="hero-slide"
+         style="background-image:url('https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg')">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Knoxville, Tennessee</div>
+
+        <h1>
+          Space to slow down.<br>
+          <span>Time to unwind.</span>
+        </h1>
+
+        <p>
+          A calm and private setting for massage, quiet relaxation,
+          and time away from the pace of everyday life.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-gold" href="tel:+18659855888">
+            Call 865-985-5888
+          </a>
+
+          <a class="btn btn-light" href="sms:+18659855888">
+            Send a Text
+          </a>
+        </div>
+      </div>
+
+      <div class="trust reveal">
+        <div>
+          <strong>Calm Setting</strong>
+          <span>A quieter wellness visit</span>
+        </div>
+
+        <div>
+          <strong>Private Atmosphere</strong>
+          <span>Space to comfortably unwind</span>
+        </div>
+
+        <div>
+          <strong>Thoughtful Comfort</strong>
+          <span>A relaxed, unhurried pace</span>
+        </div>
+
+        <div>
+          <strong>Easy Contact</strong>
+          <span>Call or text us directly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+
+      <div class="about-images reveal">
+        <img
+          src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg"
+          alt="Relaxing massage atmosphere"
+          loading="lazy">
+
+        <img
+          src="https://i.pinimg.com/736x/4b/18/78/4b18785283d7086b596c4c44777599d1.jpg"
+          alt="Calm foot massage atmosphere"
+          loading="lazy">
+      </div>
+
+      <div class="reveal">
+        <div class="eyebrow">About JH Wellness</div>
+
+        <h2 class="title">
+          A quieter moment in the middle of your day.
+        </h2>
+
+        <p class="copy">
+          JH Wellness is centered on a simple idea: create a clean,
+          comfortable and private environment where guests can slow down,
+          disconnect from outside distractions and enjoy an unhurried massage
+          experience.
+        </p>
+
+        <div class="feature-list">
+
+          <div class="feature">
+            <b>01</b>
+            <div>
+              <h3>Quiet by Design</h3>
+              <p>
+                A composed environment created to feel removed from the
+                noise and pace outside.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <b>02</b>
+            <div>
+              <h3>Privacy & Comfort</h3>
+              <p>
+                A relaxed setting with personal space and a comfortable
+                pace throughout your visit.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <b>03</b>
+            <div>
+              <h3>Clean, Thoughtful Details</h3>
+              <p>
+                Neat presentation and simple surroundings help support
+                a more restful experience.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="eyebrow">The JH Experience</div>
+
+        <h2 class="title">
+          Comfort lives in the details.
+        </h2>
+
+        <p class="copy">
+          From arriving to leaving, the experience is designed around
+          calm surroundings, privacy, cleanliness and the opportunity
+          to settle into a slower rhythm.
+        </p>
+      </div>
+
+      <div class="experience-grid reveal">
+
+        <article class="experience-card">
+          <small>01</small>
+          <h3>Calm Arrival</h3>
+          <p>
+            Give yourself a moment to settle in and leave the pace
+            of the day outside.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <small>02</small>
+          <h3>Private Space</h3>
+          <p>
+            A composed atmosphere helps your visit feel more personal
+            and removed from outside distractions.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <small>03</small>
+          <h3>Mindful Details</h3>
+          <p>
+            Clean presentation and understated surroundings keep
+            the experience simple and comfortable.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <small>04</small>
+          <h3>Restful Finish</h3>
+          <p>
+            Take a moment before heading back out so the visit can
+            end as calmly as it began.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="eyebrow">Services & Pricing</div>
+
+        <h2 class="title">
+          Choose the time that suits your day.
+        </h2>
+
+        <p class="copy">
+          Cash and card pricing below follows the current JH Wellness
+          service menu. Call or text us directly to ask about availability.
+        </p>
+      </div>
+
+
+      <div class="service-grid">
+
+        <!-- =====================================================
+             SWEDISH MASSAGE
+             UPDATED WITH REAL SWEDISH MASSAGE IMAGE CAROUSEL
+             ===================================================== -->
+        <article class="service-card reveal">
+
+          <div class="service-media" data-carousel data-interval="4700">
+
+            <div class="slide active">
+              <img
+                src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/02/swedish-massage-london.webp"
+                alt="Swedish Massage with gentle back and shoulder work"
+                loading="lazy"
+                referrerpolicy="no-referrer">
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/01/swedish_massage_6-768x576.webp"
+                alt="Relaxing Swedish Massage session"
+                loading="lazy"
+                referrerpolicy="no-referrer">
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/01/swedish_massage_4-768x576.webp"
+                alt="Swedish Massage focusing on gentle neck relaxation"
+                loading="lazy"
+                referrerpolicy="no-referrer">
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/02/mobile-swedish-massage.webp"
+                alt="Swedish Massage neck and shoulder technique"
+                loading="lazy"
+                referrerpolicy="no-referrer">
+            </div>
+
+            <span class="carousel-count">01 / 04</span>
+
+            <div class="carousel-controls">
+              <button type="button" class="prev" aria-label="Previous Swedish Massage image">
+                ←
+              </button>
+
+              <button type="button" class="next" aria-label="Next Swedish Massage image">
+                →
+              </button>
+            </div>
+
+          </div>
+
+          <div class="service-body">
+
+            <div class="service-head">
+              <div>
+                <span class="service-label">Classic Relaxation</span>
+                <h3 class="service-title">Swedish Massage</h3>
+              </div>
+
+              <span class="duration-badge">30–120 MIN</span>
+            </div>
+
+            <p class="service-desc">
+              A smooth, unhurried massage experience for guests looking
+              to decompress from everyday tension and enjoy quiet,
+              full-body relaxation at a comfortable pace.
+            </p>
+
+            <div class="benefits">
+              <span>Everyday Unwinding</span>
+              <span>Relaxed Pace</span>
+              <span>Full-Body Comfort</span>
+            </div>
+
+            <div class="prices">
+
+              <div class="price-row head">
+                <span>Duration</span>
+                <span>Cash</span>
+                <span>Card</span>
+              </div>
+
+              <div class="price-row">
+                <span>30 minutes</span>
+                <span class="money">$60</span>
+                <span class="money">$63</span>
+              </div>
+
+              <div class="price-row">
+                <span>60 minutes</span>
+                <span class="money">$80</span>
+                <span class="money">$83</span>
+              </div>
+
+              <div class="price-row">
+                <span>90 minutes</span>
+                <span class="money">$120</span>
+                <span class="money">$123</span>
+              </div>
+
+              <div class="price-row">
+                <span>120 minutes</span>
+                <span class="money">$160</span>
+                <span class="money">$163</span>
+              </div>
+
+            </div>
+
+            <div class="service-actions">
+              <a class="btn btn-gold" href="tel:+18659855888">
+                Call for Availability
+              </a>
+
+              <a class="btn btn-dark" href="sms:+18659855888">
+                Text Us
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- DEEP TISSUE -->
+        <article class="service-card reveal">
+
+          <div class="service-media" data-carousel data-interval="5000">
+
+            <div class="slide active">
+              <img src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg"
+                   alt="Deep Tissue Massage"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg"
+                   alt="Deep Tissue Massage session"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/736x/85/e4/e0/85e4e0455458e84ff5b39582cf45a340.jpg"
+                   alt="Deep Tissue Massage technique"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg"
+                   alt="Deep Tissue Massage atmosphere"
+                   loading="lazy">
+            </div>
+
+            <span class="carousel-count">01 / 04</span>
+
+            <div class="carousel-controls">
+              <button type="button" class="prev" aria-label="Previous Deep Tissue image">←</button>
+              <button type="button" class="next" aria-label="Next Deep Tissue image">→</button>
+            </div>
+          </div>
+
+          <div class="service-body">
+
+            <div class="service-head">
+              <div>
+                <span class="service-label">Focused Pressure</span>
+                <h3 class="service-title">Deep Tissue Massage</h3>
+              </div>
+
+              <span class="duration-badge">60–120 MIN</span>
+            </div>
+
+            <p class="service-desc">
+              A firmer, more focused massage option for guests who prefer
+              intentional pressure on areas that feel tight after long
+              workdays, travel or physical activity.
+            </p>
+
+            <div class="benefits">
+              <span>Firmer Pressure</span>
+              <span>Focused Attention</span>
+              <span>Tired-Muscle Comfort</span>
+            </div>
+
+            <div class="prices">
+
+              <div class="price-row head">
+                <span>Duration</span>
+                <span>Cash</span>
+                <span>Card</span>
+              </div>
+
+              <div class="price-row">
+                <span>60 minutes</span>
+                <span class="money">$100</span>
+                <span class="money">$103</span>
+              </div>
+
+              <div class="price-row">
+                <span>90 minutes</span>
+                <span class="money">$140</span>
+                <span class="money">$143</span>
+              </div>
+
+              <div class="price-row">
+                <span>120 minutes</span>
+                <span class="money">$200</span>
+                <span class="money">$203</span>
+              </div>
+
+            </div>
+
+            <div class="service-actions">
+              <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
+              <a class="btn btn-dark" href="sms:+18659855888">Text Us</a>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- FOOT MASSAGE -->
+        <article class="service-card reveal">
+
+          <div class="service-media" data-carousel data-interval="5200">
+
+            <div class="slide active">
+              <img src="https://i.pinimg.com/1200x/6a/df/fe/6adffe5706bdce88dd2d2d0fc6875398.jpg"
+                   alt="Foot Massage"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg"
+                   alt="Foot Massage relaxation"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/1200x/2b/85/42/2b8542fd0d099c9771bb5b332d6f51a9.jpg"
+                   alt="Foot Massage session"
+                   loading="lazy">
+            </div>
+
+            <div class="slide">
+              <img src="https://i.pinimg.com/736x/76/48/7c/76487c07076e4b41fcce7c4ea35e2005.jpg"
+                   alt="Foot Massage atmosphere"
+                   loading="lazy">
+            </div>
+
+            <span class="carousel-count">01 / 04</span>
+
+            <div class="carousel-controls">
+              <button type="button" class="prev" aria-label="Previous Foot Massage image">←</button>
+              <button type="button" class="next" aria-label="Next Foot Massage image">→</button>
+            </div>
+
+          </div>
+
+          <div class="service-body">
+
+            <div class="service-head">
+              <div>
+                <span class="service-label">Additional Service</span>
+                <h3 class="service-title">Foot Massage</h3>
+              </div>
+
+              <span class="duration-badge">60 MIN</span>
+            </div>
+
+            <p class="service-desc">
+              A feet-focused session for days when standing, walking,
+              travel or work leaves you ready to sit back and give
+              tired feet dedicated time to relax.
+            </p>
+
+            <div class="benefits">
+              <span>Tired Feet</span>
+              <span>After Long Days</span>
+              <span>Quiet Relaxation</span>
+            </div>
+
+            <div class="prices">
+
+              <div class="price-row head">
+                <span>Duration</span>
+                <span>Cash</span>
+                <span>Card</span>
+              </div>
+
+              <div class="price-row">
+                <span>60 minutes</span>
+                <span class="money">$80</span>
+                <span class="money">$83</span>
+              </div>
+
+            </div>
+
+            <div class="service-actions">
+              <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
+              <a class="btn btn-dark" href="sms:+18659855888">Text Us</a>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- CHAIR MASSAGE -->
+        <article class="service-card reveal">
+
+          <div class="service-media">
+            <div class="slide active">
+              <img src="https://i.pinimg.com/736x/f1/ee/df/f1eedfc8c7b5322308d56bda63212a19.jpg"
+                   alt="Chair Massage"
+                   loading="lazy">
+            </div>
+          </div>
+
+          <div class="service-body">
+
+            <div class="service-head">
+              <div>
+                <span class="service-label">Additional Service</span>
+                <h3 class="service-title">Chair Massage</h3>
+              </div>
+
+              <span class="duration-badge">30 MIN</span>
+            </div>
+
+            <p class="service-desc">
+              A shorter on-chair massage option for guests who want
+              a streamlined pause during the day without choosing a
+              longer table massage session.
+            </p>
+
+            <div class="benefits">
+              <span>30-Minute Format</span>
+              <span>On-Chair Session</span>
+              <span>Quick Reset</span>
+            </div>
+
+            <div class="prices">
+
+              <div class="price-row head">
+                <span>Duration</span>
+                <span>Cash</span>
+                <span>Card</span>
+              </div>
+
+              <div class="price-row">
+                <span>30 minutes</span>
+                <span class="money">$60</span>
+                <span class="money">$63</span>
+              </div>
+
+            </div>
+
+            <div class="service-actions">
+              <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
+              <a class="btn btn-dark" href="sms:+18659855888">Text Us</a>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="eyebrow">Atmosphere</div>
+        <h2 class="title">Quiet. Warm. Uncomplicated.</h2>
+
+        <p class="copy">
+          A visual expression of the calm, comfortable atmosphere
+          JH Wellness is designed to offer.
+        </p>
+      </div>
+
+      <div class="gallery-grid reveal">
+
+        <div class="gallery-item">
+          <img
+            src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/02/swedish-massage-london.webp"
+            alt="Swedish Massage atmosphere"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg"
+            alt="Foot Massage atmosphere"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg"
+            alt="Deep Tissue Massage atmosphere"
+            loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://perfectlondonmassage.co.uk/wp-content/uploads/2024/01/swedish_massage_6-768x576.webp"
+            alt="Relaxing Swedish Massage"
+            loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DIRECT CONTACT -->
+  <section class="section">
+    <div class="container">
+
+      <div class="cta-panel reveal">
+        <div class="cta-grid">
+
+          <div>
+            <div class="eyebrow">Ready When You Are</div>
+
+            <h2 class="title">
+              Call or text JH Wellness directly.
+            </h2>
+
+            <p class="copy">
+              Ask about current availability, service times, pricing
+              or anything you would like to know before your visit.
+            </p>
+
+            <div class="phone-display">865-985-5888</div>
+          </div>
+
+          <div class="cta-buttons">
+            <a class="btn btn-gold" href="tel:+18659855888">
+              Call 865-985-5888
+            </a>
+
+            <a class="btn btn-light" href="sms:+18659855888">
+              Send a Text
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews">
+
+    <div class="container heading reveal">
+      <div class="eyebrow">Guest Experience</div>
+
+      <h2 class="title">
+        A quieter kind of wellness visit.
+      </h2>
+
+      <p class="review-note">
+        Sample website review copy. Replace with verified customer
+        feedback before publishing as actual testimonials.
+      </p>
+    </div>
+
+    <div class="review-rows">
+
+      <div class="review-row">
+        <div class="review-track">
+          <div class="review-set">
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“The atmosphere felt peaceful from the moment I walked in. Everything felt calm and comfortable.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“A quiet place to disconnect for a while. I really appreciated the relaxed pace.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“Calling ahead was simple and the whole visit felt straightforward and easy.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“The space felt private and peaceful without ever feeling rushed.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“Clean, comfortable and quiet. It was easy to settle in and relax.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="review-row reverse">
+        <div class="review-track">
+          <div class="review-set">
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“I liked the private feeling. It was a nice break after a long and busy week.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“The environment was warm and welcoming without feeling busy.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“It was easy to call with a question before visiting, and the experience felt very comfortable.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“A lovely option when you simply need some quiet time for yourself.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“Everything felt relaxed and uncomplicated. I especially liked the peaceful atmosphere.”</blockquote>
+              <small>Sample Review</small>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container faq-grid">
+
+      <div class="reveal">
+        <div class="eyebrow">Before Your Visit</div>
+
+        <h2 class="title">
+          A few helpful answers.
+        </h2>
+
+        <p class="copy">
+          Have another question? Call or text us directly at
+          865-985-5888.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-gold" href="tel:+18659855888">Call Us</a>
+          <a class="btn btn-dark" href="sms:+18659855888">Text Us</a>
+        </div>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <article class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <strong>How early should I arrive?</strong>
+            <span class="plus">+</span>
+          </button>
+
+          <div class="faq-answer" hidden>
+            Arriving about 5–10 minutes early gives you a comfortable
+            amount of time to settle in before your session.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <strong>Can I get a massage if I have an injury?</strong>
+            <span class="plus">+</span>
+          </button>
+
+          <div class="faq-answer" hidden>
+            If you have a current injury, recent procedure or medical
+            concern, check with an appropriate healthcare professional
+            and let us know about relevant limitations beforehand.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <strong>What is your cancellation policy?</strong>
+            <span class="plus">+</span>
+          </button>
+
+          <div class="faq-answer" hidden>
+            Please call or text JH Wellness at 865-985-5888 for the
+            current cancellation and rescheduling policy.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <strong>Is there parking available?</strong>
+            <span class="plus">+</span>
+          </button>
+
+          <div class="faq-answer" hidden>
+            Please call or text us before your visit for current parking
+            information and arrival guidance at 7341 Chapman Hwy.
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LOCATION -->
+  <section id="contact">
+    <div class="location-grid">
+
+      <div class="location-info">
+
+        <div class="eyebrow">Contact & Location</div>
+
+        <h2 class="title">
+          Visit JH Wellness in Knoxville.
+        </h2>
+
+        <div class="details">
+
+          <div class="detail-row">
+            <b>Address</b>
+            <span>
+              7341 Chapman Hwy<br>
+              Knoxville, TN 37920
+            </span>
+          </div>
+
+          <div class="detail-row">
+            <b>Phone</b>
+            <span>
+              <a href="tel:+18659855888">865-985-5888</a>
+            </span>
+          </div>
+
+          <div class="detail-row">
+            <b>Mon–Sat</b>
+            <span>9:30 AM – 9:00 PM</span>
+          </div>
+
+          <div class="detail-row">
+            <b>Sunday</b>
+            <span>11:00 AM – 7:00 PM</span>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-gold" href="tel:+18659855888">Call Now</a>
+          <a class="btn btn-light" href="sms:+18659855888">Send a Text</a>
+        </div>
+
+      </div>
+
+      <div>
+        <iframe
+          title="JH Wellness location"
+          src="https://www.google.com/maps?q=7341+Chapman+Hwy,+Knoxville,+TN+37920&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <a class="brand" href="#home">
+        <span>
           <span class="brand-name">JH WELLNESS</span>
           <span class="brand-sub">Massage · Wellness · Relaxation</span>
         </span>
       </a>
+    </div>
 
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
+    <div>
+      <h3>Explore</h3>
+
+      <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#experience">Experience</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
       </nav>
+    </div>
 
-      <div class="nav-actions">
-        <a class="btn btn-gold nav-cta" href="tel:+18659855888" aria-label="Call JH Wellness">
-          Call
-        </a>
+    <div>
+      <h3>Contact</h3>
 
-        <a class="btn btn-outline-light nav-cta" href="sms:+18659855888" aria-label="Text JH Wellness">
-          Text
-        </a>
-
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-        >
-          <span></span>
-        </button>
+      <div class="footer-contact">
+        <a href="tel:+18659855888">865-985-5888</a>
+        <a href="sms:+18659855888">Send a Text</a>
+        <span>7341 Chapman Hwy</span>
+        <span>Knoxville, TN 37920</span>
+        <span>Mon–Sat: 9:30 AM – 9:00 PM</span>
+        <span>Sunday: 11:00 AM – 7:00 PM</span>
       </div>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu-inner">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Experience</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-
-        <div class="mobile-menu-actions">
-          <a class="btn btn-gold" href="tel:+18659855888">Call 865-985-5888</a>
-          <a class="btn btn-outline-light" href="sms:+18659855888">Send a Text</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-  <main>
-    <!-- =========================================================
-         HERO
-         Only imagery corresponding to services offered by the store.
-         ========================================================= -->
-    <section class="hero" id="home" aria-label="JH Wellness introduction">
-
-      <div class="hero-slides" aria-hidden="true">
-        <div
-          class="hero-slide active"
-          style="background-image:url('https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg')">
-        </div>
-
-        <div
-          class="hero-slide"
-          style="background-image:url('https://i.pinimg.com/1200x/6a/df/fe/6adffe5706bdce88dd2d2d0fc6875398.jpg')">
-        </div>
-
-        <div
-          class="hero-slide"
-          style="background-image:url('https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg')">
-        </div>
-
-        <div
-          class="hero-slide"
-          style="background-image:url('https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg')">
-        </div>
-      </div>
-
-      <div class="hero-overlay"></div>
-      <div class="hero-glow"></div>
-
-      <div class="hero-content">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">Knoxville, Tennessee</div>
-
-          <h1 class="display-title">
-            Space to slow down.<br>
-            <span class="gold">Time to feel restored.</span>
-          </h1>
-
-          <p class="hero-text">
-            JH Wellness offers a calm, private setting for massage and quiet
-            relaxation—designed for guests who want to step away from the pace
-            of the day and settle into a more comfortable rhythm.
-          </p>
-
-          <div class="button-row">
-            <a class="btn btn-gold" href="tel:+18659855888">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M7.3 3.8 4.8 5.2c-.8.5-1.2 1.4-.9 2.3 1.7 5.7 6.1 10.1 11.8 11.8.9.3 1.8-.1 2.3-.9l1.4-2.5c.4-.7.2-1.5-.5-1.9l-3.1-1.8c-.6-.4-1.4-.2-1.9.3l-1 1.1a12.2 12.2 0 0 1-4.5-4.5l1.1-1c.5-.5.7-1.3.3-1.9L9.2 4.3c-.4-.7-1.2-.9-1.9-.5Z"
-                      stroke="currentColor" stroke-width="1.7"/>
-              </svg>
-              Call 865-985-5888
-            </a>
-
-            <a class="btn btn-outline-light" href="sms:+18659855888">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 3v-13a2 2 0 0 1 2-2Z"
-                      stroke="currentColor" stroke-width="1.7"/>
-                <path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.7"/>
-              </svg>
-              Send a Text
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-trust reveal">
-          <div class="trust-item">
-            <strong>Calm Setting</strong>
-            <span>Designed for a quieter visit</span>
-          </div>
-
-          <div class="trust-item">
-            <strong>Private Atmosphere</strong>
-            <span>Space to settle in and unwind</span>
-          </div>
-
-          <div class="trust-item">
-            <strong>Thoughtful Comfort</strong>
-            <span>A relaxed, unhurried experience</span>
-          </div>
-
-          <div class="trust-item">
-            <strong>Easy Contact</strong>
-            <span>Simply call or text us</span>
-          </div>
-        </div>
-      </div>
-
-      <aside class="hero-aside">
-        <span class="hero-aside-label">Visit JH Wellness</span>
-        <strong>7341 Chapman Hwy</strong>
-        <p>Knoxville, TN 37920</p>
-      </aside>
-
-      <div class="hero-dots" id="heroDots" aria-label="Hero images"></div>
-    </section>
-
-
-    <!-- =========================================================
-         ABOUT
-         ========================================================= -->
-    <section class="section about" id="about">
-      <div class="container about-grid">
-
-        <div class="about-visual reveal">
-          <img
-            class="about-img-primary"
-            src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg"
-            alt="Massage atmosphere at JH Wellness"
-            loading="lazy"
-          />
-
-          <img
-            class="about-img-secondary"
-            src="https://i.pinimg.com/736x/4b/18/78/4b18785283d7086b596c4c44777599d1.jpg"
-            alt="Relaxing foot massage atmosphere"
-            loading="lazy"
-          />
-
-          <div class="about-emblem" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none">
-              <path d="M32 47C22 40 18 29 20 15c9 4 14 12 12 24 0-12 5-20 14-24 2 14-2 25-14 32Z"
-                    stroke="currentColor" stroke-width="1.7"/>
-              <path d="M31.7 45C24 44 15 38 10 29c10-1 17 3 22 13M32.3 45C40 44 49 38 54 29c-10-1-17 3-22 13"
-                    stroke="currentColor" stroke-width="1.7"/>
-              <path d="M13 51c11-6 27-6 38 0" stroke="currentColor" stroke-width="1.7"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="about-copy reveal">
-          <div class="eyebrow">About JH Wellness</div>
-
-          <h2 class="section-title">
-            A softer pace in the middle of your day.
-          </h2>
-
-          <p class="section-copy">
-            Our focus is simple: create a setting where relaxation feels natural.
-            From the atmosphere of the room to the pace of your visit, JH Wellness
-            is centered on privacy, cleanliness, comfort, and the chance to
-            disconnect for a little while.
-          </p>
-
-          <div class="about-features">
-            <article class="about-feature">
-              <span class="feature-number">01</span>
-              <div>
-                <h3>Quiet by Design</h3>
-                <p>
-                  A composed environment intended to help you leave outside noise
-                  and everyday distractions at the door.
-                </p>
-              </div>
-            </article>
-
-            <article class="about-feature">
-              <span class="feature-number">02</span>
-              <div>
-                <h3>Privacy & Comfort</h3>
-                <p>
-                  A wellness experience shaped around personal space, a relaxed
-                  pace, and a sense of ease throughout your visit.
-                </p>
-              </div>
-            </article>
-
-            <article class="about-feature">
-              <span class="feature-number">03</span>
-              <div>
-                <h3>Clean, Considered Details</h3>
-                <p>
-                  A neat, polished atmosphere where thoughtful presentation and
-                  simple comforts support a more restful experience.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         EXPERIENCE
-         ========================================================= -->
-    <section class="section experience" id="experience">
-      <div class="container">
-
-        <div class="experience-heading reveal">
-          <div>
-            <div class="eyebrow">The JH Experience</div>
-            <h2 class="section-title">
-              Comfort lives in the details.
-            </h2>
-          </div>
-
-          <p class="section-copy">
-            A wellness visit should feel easy from beginning to end. Our approach
-            emphasizes a calm arrival, personal space, thoughtful surroundings,
-            and time to transition back into the rest of your day.
-          </p>
-        </div>
-
-        <div class="experience-cards reveal">
-
-          <article class="experience-card">
-            <span class="experience-index">01</span>
-
-            <svg class="experience-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M7 26h34M12 26c0-9 5-15 12-15s12 6 12 15M10 32h28"
-                    stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="24" cy="8" r="2" fill="currentColor"/>
-            </svg>
-
-            <h3>Calm Arrival</h3>
-            <p>
-              Give yourself a few minutes to arrive, settle in, and let the pace
-              of the day begin to soften.
-            </p>
-          </article>
-
-          <article class="experience-card">
-            <span class="experience-index">02</span>
-
-            <svg class="experience-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M12 39V9h24v30M18 16h12M18 23h12M18 30h7"
-                    stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-
-            <h3>Private Space</h3>
-            <p>
-              A composed atmosphere helps the visit feel more personal,
-              comfortable, and removed from outside distractions.
-            </p>
-          </article>
-
-          <article class="experience-card">
-            <span class="experience-index">03</span>
-
-            <svg class="experience-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 7c-6 6-10 12-10 18a10 10 0 0 0 20 0c0-6-4-12-10-18Z"
-                    stroke="currentColor" stroke-width="1.5"/>
-              <path d="M19 27c1 3 3 5 6 5" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-
-            <h3>Mindful Details</h3>
-            <p>
-              Clean presentation, understated surroundings, and a relaxed pace
-              create a setting where simplicity feels intentional.
-            </p>
-          </article>
-
-          <article class="experience-card">
-            <span class="experience-index">04</span>
-
-            <svg class="experience-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M9 30c7-9 23-9 30 0M14 35c5-5 15-5 20 0M20 40c2-2 6-2 8 0"
-                    stroke="currentColor" stroke-width="1.5"/>
-              <path d="M24 8v11M18 13l6 6 6-6" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-
-            <h3>Restful Finish</h3>
-            <p>
-              Take a moment before heading out so your visit ends as calmly as
-              it began.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         SERVICES & PRICING
-         Services strictly follow supplied store menu.
-         ========================================================= -->
-    <section class="section services" id="services">
-      <div class="container">
-
-        <div class="services-intro reveal">
-          <div>
-            <div class="eyebrow">Services & Pricing</div>
-            <h2 class="section-title">
-              Choose the pace that suits your day.
-            </h2>
-
-            <p class="section-copy">
-              Select from the massage services and durations currently listed by
-              JH Wellness. Cash and card pricing are shown separately below.
-            </p>
-          </div>
-
-          <aside class="pricing-note">
-            <strong>Cash & card prices</strong>
-            The prices below reflect the supplied JH Wellness service menu.
-            Call or text us directly to ask about availability.
-          </aside>
-        </div>
-
-
-        <div class="services-grid">
-
-          <!-- SWEDISH MASSAGE -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <div class="swedish-art" role="img" aria-label="JH Wellness Swedish Massage">
-                <div class="swedish-art-inner">
-                  <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                    <path d="M32 47C22 40 18 29 20 15c9 4 14 12 12 24 0-12 5-20 14-24 2 14-2 25-14 32Z"
-                          stroke="currentColor" stroke-width="1.4"/>
-                    <path d="M31.7 45C24 44 15 38 10 29c10-1 17 3 22 13M32.3 45C40 44 49 38 54 29c-10-1-17 3-22 13"
-                          stroke="currentColor" stroke-width="1.4"/>
-                    <path d="M13 51c11-6 27-6 38 0" stroke="currentColor" stroke-width="1.4"/>
-                  </svg>
-
-                  <strong>Swedish Massage</strong>
-                  <span>Gentle · Flowing · Relaxing</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="service-body">
-              <div class="service-topline">
-                <div>
-                  <span class="service-kicker">Classic Relaxation</span>
-                  <h3 class="service-title">Swedish Massage</h3>
-                </div>
-
-                <span class="service-badge">30–120 MIN</span>
-              </div>
-
-              <p class="service-description">
-                A smooth, unhurried massage experience for guests looking to
-                decompress from everyday tension and enjoy quiet, full-body
-                relaxation at a comfortable pace.
-              </p>
-
-              <div class="benefits">
-                <span class="benefit">Everyday Unwinding</span>
-                <span class="benefit">Relaxed Pace</span>
-                <span class="benefit">Full-Body Comfort</span>
-              </div>
-
-              <div class="price-table" aria-label="Swedish Massage prices">
-                <div class="price-row price-head">
-                  <span>Duration</span>
-                  <span>Cash</span>
-                  <span>Card</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">30 minutes</span>
-                  <span class="amount">$60</span>
-                  <span class="amount">$63</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">60 minutes</span>
-                  <span class="amount">$80</span>
-                  <span class="amount">$83</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">90 minutes</span>
-                  <span class="amount">$120</span>
-                  <span class="amount">$123</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">120 minutes</span>
-                  <span class="amount">$160</span>
-                  <span class="amount">$163</span>
-                </div>
-              </div>
-
-              <div class="service-actions">
-                <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
-                <a class="btn btn-outline-dark" href="sms:+18659855888">Text Us</a>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- DEEP TISSUE -->
-          <article class="service-card reveal">
-            <div class="service-media js-carousel" data-interval="4700">
-              <div class="service-slide active">
-                <img
-                  src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg"
-                  alt="Deep Tissue Massage"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg"
-                  alt="Deep Tissue Massage atmosphere"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/736x/85/e4/e0/85e4e0455458e84ff5b39582cf45a340.jpg"
-                  alt="Deep Tissue Massage session"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg"
-                  alt="Deep Tissue Massage setting"
-                  loading="lazy"
-                />
-              </div>
-
-              <span class="carousel-count" aria-live="polite">01 / 04</span>
-
-              <div class="carousel-controls">
-                <button class="carousel-btn prev" type="button" aria-label="Previous Deep Tissue image">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m15 5-7 7 7 7" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </button>
-
-                <button class="carousel-btn next" type="button" aria-label="Next Deep Tissue image">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="service-body">
-              <div class="service-topline">
-                <div>
-                  <span class="service-kicker">Focused Pressure</span>
-                  <h3 class="service-title">Deep Tissue Massage</h3>
-                </div>
-
-                <span class="service-badge">60–120 MIN</span>
-              </div>
-
-              <p class="service-description">
-                A firmer, more focused massage option for guests who prefer
-                intentional pressure on areas that feel tight after long workdays,
-                repetitive routines, travel, or physical activity.
-              </p>
-
-              <div class="benefits">
-                <span class="benefit">Firmer Pressure</span>
-                <span class="benefit">Focused Attention</span>
-                <span class="benefit">Tired-Muscle Comfort</span>
-              </div>
-
-              <div class="price-table" aria-label="Deep Tissue Massage prices">
-                <div class="price-row price-head">
-                  <span>Duration</span>
-                  <span>Cash</span>
-                  <span>Card</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">60 minutes</span>
-                  <span class="amount">$100</span>
-                  <span class="amount">$103</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">90 minutes</span>
-                  <span class="amount">$140</span>
-                  <span class="amount">$143</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">120 minutes</span>
-                  <span class="amount">$200</span>
-                  <span class="amount">$203</span>
-                </div>
-              </div>
-
-              <div class="service-actions">
-                <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
-                <a class="btn btn-outline-dark" href="sms:+18659855888">Text Us</a>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- FOOT MASSAGE -->
-          <article class="service-card reveal">
-            <div class="service-media js-carousel" data-interval="5100">
-
-              <div class="service-slide active">
-                <img
-                  src="https://i.pinimg.com/1200x/6a/df/fe/6adffe5706bdce88dd2d2d0fc6875398.jpg"
-                  alt="Foot Massage"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg"
-                  alt="Relaxing Foot Massage"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/1200x/2b/85/42/2b8542fd0d099c9771bb5b332d6f51a9.jpg"
-                  alt="Foot Massage setting"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="service-slide">
-                <img
-                  src="https://i.pinimg.com/736x/76/48/7c/76487c07076e4b41fcce7c4ea35e2005.jpg"
-                  alt="Foot Massage session"
-                  loading="lazy"
-                />
-              </div>
-
-              <span class="carousel-count" aria-live="polite">01 / 04</span>
-
-              <div class="carousel-controls">
-                <button class="carousel-btn prev" type="button" aria-label="Previous Foot Massage image">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m15 5-7 7 7 7" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </button>
-
-                <button class="carousel-btn next" type="button" aria-label="Next Foot Massage image">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.7"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="service-body">
-              <div class="service-topline">
-                <div>
-                  <span class="service-kicker">Additional Service</span>
-                  <h3 class="service-title">Foot Massage</h3>
-                </div>
-
-                <span class="service-badge">60 MIN</span>
-              </div>
-
-              <p class="service-description">
-                A feet-focused session created for those moments when standing,
-                walking, travel, or a long workday leaves you ready to sit back
-                and give your feet dedicated time to relax.
-              </p>
-
-              <div class="benefits">
-                <span class="benefit">Tired Feet</span>
-                <span class="benefit">After Long Days</span>
-                <span class="benefit">Quiet Relaxation</span>
-              </div>
-
-              <div class="price-table" aria-label="Foot Massage prices">
-                <div class="price-row price-head">
-                  <span>Duration</span>
-                  <span>Cash</span>
-                  <span>Card</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">60 minutes</span>
-                  <span class="amount">$80</span>
-                  <span class="amount">$83</span>
-                </div>
-              </div>
-
-              <div class="service-actions">
-                <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
-                <a class="btn btn-outline-dark" href="sms:+18659855888">Text Us</a>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- CHAIR MASSAGE -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <div class="service-slide active">
-                <img
-                  src="https://i.pinimg.com/736x/f1/ee/df/f1eedfc8c7b5322308d56bda63212a19.jpg"
-                  alt="Chair Massage"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            <div class="service-body">
-              <div class="service-topline">
-                <div>
-                  <span class="service-kicker">Additional Service</span>
-                  <h3 class="service-title">Chair Massage</h3>
-                </div>
-
-                <span class="service-badge">30 MIN</span>
-              </div>
-
-              <p class="service-description">
-                A shorter on-chair massage option for guests who want a
-                streamlined pause in the day without choosing a longer table
-                massage session.
-              </p>
-
-              <div class="benefits">
-                <span class="benefit">30-Minute Format</span>
-                <span class="benefit">On-Chair Session</span>
-                <span class="benefit">Quick Reset</span>
-              </div>
-
-              <div class="price-table" aria-label="Chair Massage prices">
-                <div class="price-row price-head">
-                  <span>Duration</span>
-                  <span>Cash</span>
-                  <span>Card</span>
-                </div>
-
-                <div class="price-row">
-                  <span class="duration">30 minutes</span>
-                  <span class="amount">$60</span>
-                  <span class="amount">$63</span>
-                </div>
-              </div>
-
-              <div class="service-actions">
-                <a class="btn btn-gold" href="tel:+18659855888">Call for Availability</a>
-                <a class="btn btn-outline-dark" href="sms:+18659855888">Text Us</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         ATMOSPHERE GALLERY
-         ========================================================= -->
-    <section class="section gallery" aria-label="JH Wellness atmosphere">
-      <div class="container">
-
-        <div class="gallery-top reveal">
-          <div>
-            <div class="eyebrow">A Moment for Yourself</div>
-            <h2 class="section-title">Quiet. Warm. Uncomplicated.</h2>
-          </div>
-
-          <p>
-            A visual expression of the kind of calm JH Wellness is designed to
-            offer: understated surroundings, comfortable pacing, and a little
-            distance from the rush outside.
-          </p>
-        </div>
-
-        <div class="gallery-grid reveal">
-
-          <figure class="gallery-item">
-            <img
-              src="https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg"
-              alt="Calm massage atmosphere"
-              loading="lazy"
-            />
-            <figcaption class="gallery-caption">A slower rhythm</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img
-              src="https://i.pinimg.com/736x/d2/08/0e/d2080e371f664c11f134eb291883c1dc.jpg"
-              alt="Foot massage relaxation"
-              loading="lazy"
-            />
-            <figcaption class="gallery-caption">Time to unwind</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img
-              src="https://i.pinimg.com/736x/85/e4/e0/85e4e0455458e84ff5b39582cf45a340.jpg"
-              alt="Deep Tissue Massage atmosphere"
-              loading="lazy"
-            />
-            <figcaption class="gallery-caption">Thoughtful comfort</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img
-              src="https://i.pinimg.com/1200x/6a/a8/16/6aa81653401306ff6509eeea39b0d422.jpg"
-              alt="Foot massage wellness atmosphere"
-              loading="lazy"
-            />
-            <figcaption class="gallery-caption">Quiet space, clearer head</figcaption>
-          </figure>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         DIRECT CALL / TEXT
-         ========================================================= -->
-    <section class="contact-cta" aria-label="Contact JH Wellness">
-      <div class="container">
-
-        <div class="contact-panel reveal">
-          <div class="contact-panel-inner">
-
-            <div>
-              <div class="eyebrow">Ready When You Are</div>
-
-              <h2 class="section-title">
-                Call or text JH Wellness directly.
-              </h2>
-
-              <p>
-                Ask about current availability, service times, pricing, or anything
-                you would like to know before your visit.
-              </p>
-
-              <div class="contact-phone">865-985-5888</div>
-            </div>
-
-            <div class="contact-direct">
-              <a class="btn btn-gold" href="tel:+18659855888">
-                Call 865-985-5888
-              </a>
-
-              <a class="btn btn-outline-light" href="sms:+18659855888">
-                Send a Text
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         REVIEWS
-         These are sample review-style placeholders and should be
-         replaced with verified customer feedback before publishing.
-         ========================================================= -->
-    <section class="section reviews" id="reviews">
-      <div class="container reviews-heading reveal">
-        <div class="eyebrow">Guest Experience</div>
-
-        <h2 class="section-title">
-          The feeling people look for in a wellness visit.
-        </h2>
-
-        <p class="review-disclaimer">
-          Sample review copy for website layout. Replace these statements with
-          verified customer reviews before publishing them as real testimonials.
-        </p>
-      </div>
-
-      <div class="review-rows">
-
-        <div class="review-row">
-          <div class="review-track">
-            <div class="review-group">
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “The atmosphere felt peaceful from the moment I walked in.
-                  Everything felt calm, clean, and easy.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “A quiet place to disconnect for a while. I appreciated how
-                  comfortable and relaxed the whole visit felt.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “Calling ahead was simple and the visit felt very
-                  straightforward. The peaceful setting was exactly what I wanted.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “The space had a calm, private feeling and never felt rushed.
-                  I left feeling like I had truly taken time for myself.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “Clean, comfortable, and quiet. The simple atmosphere made it
-                  easy to settle in and relax.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div class="review-row reverse">
-          <div class="review-track">
-            <div class="review-group">
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “I really liked the private, peaceful feeling. It was a nice
-                  break after a long and busy week.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “The environment was warm and welcoming without feeling busy.
-                  A very relaxing place to spend an hour.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “I appreciated how easy it was to call with a question before
-                  visiting. The overall experience felt comfortable and calm.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “A lovely option when you need some quiet time. The setting was
-                  neat, peaceful, and thoughtfully presented.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-              <article class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>
-                  “Everything felt relaxed and uncomplicated. I especially liked
-                  the peaceful atmosphere and sense of privacy.”
-                </blockquote>
-                <span>Sample Guest Review</span>
-              </article>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         FAQ
-         ========================================================= -->
-    <section class="section faq" id="faq">
-      <div class="container faq-layout">
-
-        <div class="faq-intro reveal">
-          <div class="eyebrow">Before Your Visit</div>
-
-          <h2 class="section-title">
-            A few helpful answers.
-          </h2>
-
-          <p class="section-copy">
-            Have another question? Call or text JH Wellness at
-            <a href="tel:+18659855888"><strong>865-985-5888</strong></a>.
-          </p>
-
-          <div class="button-row">
-            <a class="btn btn-gold" href="tel:+18659855888">Call Us</a>
-            <a class="btn btn-outline-dark" href="sms:+18659855888">Text Us</a>
-          </div>
-        </div>
-
-
-        <div class="faq-list reveal">
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>How early should I arrive?</span>
-              <span class="faq-plus" aria-hidden="true"></span>
-            </button>
-
-            <div class="faq-answer" hidden>
-              Arriving about 5–10 minutes early is a comfortable way to give
-              yourself time to settle in before your session. If you have any
-              timing questions, call or text us before you arrive.
-            </div>
-          </article>
-
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Can I get a massage if I have an injury?</span>
-              <span class="faq-plus" aria-hidden="true"></span>
-            </button>
-
-            <div class="faq-answer" hidden>
-              If you have a current injury, recent procedure, or medical concern,
-              check with an appropriate healthcare professional first and let us
-              know about any relevant limitations before your session.
-            </div>
-          </article>
-
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>What is your cancellation policy?</span>
-              <span class="faq-plus" aria-hidden="true"></span>
-            </button>
-
-            <div class="faq-answer" hidden>
-              Cancellation and rescheduling terms were not included in the
-              supplied store information. Please call or text JH Wellness at
-              865-985-5888 for the current policy.
-            </div>
-          </article>
-
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Is there parking available?</span>
-              <span class="faq-plus" aria-hidden="true"></span>
-            </button>
-
-            <div class="faq-answer" hidden>
-              Parking details were not included in the supplied store information.
-              Please call or text us before your visit for the latest parking
-              guidance at 7341 Chapman Hwy.
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================================
-         CONTACT & LOCATION
-         ========================================================= -->
-    <section class="location" id="contact">
-      <div class="location-grid">
-
-        <div class="location-info">
-          <div class="eyebrow">Contact & Location</div>
-
-          <h2 class="section-title">
-            Find your quiet moment in Knoxville.
-          </h2>
-
-          <div class="location-details">
-
-            <div class="location-row">
-              <span class="location-label">Address</span>
-              <span class="location-value">
-                7341 Chapman Hwy<br>
-                Knoxville, TN 37920
-              </span>
-            </div>
-
-            <div class="location-row">
-              <span class="location-label">Phone</span>
-              <span class="location-value">
-                <a href="tel:+18659855888">865-985-5888</a>
-              </span>
-            </div>
-
-            <div class="location-row">
-              <span class="location-label">Mon–Sat</span>
-              <span class="location-value">9:30 AM – 9:00 PM</span>
-            </div>
-
-            <div class="location-row">
-              <span class="location-label">Sunday</span>
-              <span class="location-value">11:00 AM – 7:00 PM</span>
-            </div>
-
-            <div class="location-row">
-              <span class="location-label">Today</span>
-              <span class="location-value" id="todayHours">See hours above</span>
-            </div>
-
-          </div>
-
-          <div class="button-row">
-            <a class="btn btn-gold" href="tel:+18659855888">
-              Call Now
-            </a>
-
-            <a class="btn btn-outline-light" href="sms:+18659855888">
-              Send a Text
-            </a>
-
-            <a
-              class="btn btn-outline-light"
-              href="https://www.google.com/maps/dir/?api=1&destination=7341+Chapman+Hwy+Knoxville+TN+37920"
-              target="_blank"
-              rel="noopener"
-            >
-              Directions
-            </a>
-          </div>
-        </div>
-
-        <div class="location-map">
-          <iframe
-            title="Map showing JH Wellness at 7341 Chapman Hwy, Knoxville, Tennessee"
-            src="https://www.google.com/maps?q=7341+Chapman+Hwy,+Knoxville,+TN+37920&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
-  <footer class="footer">
-    <div class="container footer-main">
-
-      <div class="footer-brand">
-        <a class="brand" href="#home">
-          <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M32 47C22 40 18 29 20 15c9 4 14 12 12 24 0-12 5-20 14-24 2 14-2 25-14 32Z"
-                  stroke="currentColor" stroke-width="2"/>
-            <path d="M31.7 45C24 44 15 38 10 29c10-1 17 3 22 13M32.3 45C40 44 49 38 54 29c-10-1-17 3-22 13"
-                  stroke="currentColor" stroke-width="2"/>
-            <path d="M13 51c11-6 27-6 38 0" stroke="currentColor" stroke-width="2"/>
-            <circle cx="32" cy="8" r="2.7" fill="currentColor"/>
-          </svg>
-
-          <span class="brand-copy">
-            <span class="brand-name">JH WELLNESS</span>
-            <span class="brand-sub">Massage · Wellness · Relaxation</span>
-          </span>
-        </a>
-
-        <p>
-          A calm Knoxville setting for Swedish Massage, Deep Tissue Massage,
-          Foot Massage, and Chair Massage.
-        </p>
-      </div>
-
-
-      <div>
-        <h3>Explore</h3>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#about">About</a>
-          <a href="#services">Services & Pricing</a>
-          <a href="#experience">Experience</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Location</a>
-        </nav>
-      </div>
-
-
-      <div>
-        <h3>Contact</h3>
-        <div class="footer-links">
-          <a href="tel:+18659855888">865-985-5888</a>
-          <a href="sms:+18659855888">Send a Text</a>
-          <span>7341 Chapman Hwy</span>
-          <span>Knoxville, TN 37920</span>
-          <span>Mon–Sat: 9:30 AM–9:00 PM</span>
-          <span>Sunday: 11:00 AM–7:00 PM</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© <span id="copyrightYear"></span> JH Wellness. All rights reserved.</span>
-      <span>Massage · Wellness · Relaxation</span>
-    </div>
-  </footer>
-
-
-  <!-- Mobile fixed Call / Text controls -->
-  <div class="mobile-action-bar" aria-label="Quick contact">
-    <a class="mobile-call" href="tel:+18659855888">
-      Call
-    </a>
-
-    <a class="mobile-text" href="sms:+18659855888">
-      Text
-    </a>
   </div>
 
-
-  <script>
-    /* =========================================================
-       JH WELLNESS — Native JavaScript
-       ========================================================= */
-
-    (() => {
-      "use strict";
-
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      /* -----------------------------------------
-         Header scroll state
-         ----------------------------------------- */
-      const header = document.getElementById("siteHeader");
-
-      const updateHeader = () => {
-        header.classList.toggle("scrolled", window.scrollY > 24);
-      };
-
-      updateHeader();
-      window.addEventListener("scroll", updateHeader, { passive: true });
+  <div class="container copyright">
+    © <span id="year"></span> JH Wellness. All rights reserved.
+  </div>
+</footer>
 
 
-      /* -----------------------------------------
-         Mobile navigation
-         ----------------------------------------- */
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
+<div class="mobile-bar">
+  <a href="tel:+18659855888">Call 865-985-5888</a>
+  <a href="sms:+18659855888">Text Us</a>
+</div>
 
-      const closeMenu = () => {
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("open");
-        document.body.classList.remove("menu-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-      };
 
-      menuToggle.addEventListener("click", () => {
-        const open = !mobileMenu.classList.contains("open");
+<script>
+(() => {
+  "use strict";
 
-        menuToggle.classList.toggle("active", open);
-        mobileMenu.classList.toggle("open", open);
-        document.body.classList.toggle("menu-open", open);
+  const reducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        menuToggle.setAttribute("aria-expanded", String(open));
-        menuToggle.setAttribute(
-          "aria-label",
-          open ? "Close navigation menu" : "Open navigation menu"
-        );
+
+  /* ================= HEADER ================= */
+
+  const header = document.getElementById("header");
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive:true });
+
+
+  /* ================= MOBILE MENU ================= */
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+  });
+
+
+  /* ================= HERO CAROUSEL ================= */
+
+  const heroSlides =
+    Array.from(document.querySelectorAll(".hero-slide"));
+
+  let heroIndex = 0;
+
+  if (!reducedMotion && heroSlides.length > 1) {
+    setInterval(() => {
+      heroSlides[heroIndex].classList.remove("active");
+
+      heroIndex =
+        (heroIndex + 1) % heroSlides.length;
+
+      heroSlides[heroIndex].classList.add("active");
+    }, 6200);
+  }
+
+
+  /* ================= SERVICE CAROUSELS ================= */
+
+  document.querySelectorAll("[data-carousel]").forEach(carousel => {
+
+    const slides =
+      Array.from(carousel.querySelectorAll(".slide"));
+
+    const prev =
+      carousel.querySelector(".prev");
+
+    const next =
+      carousel.querySelector(".next");
+
+    const count =
+      carousel.querySelector(".carousel-count");
+
+    const delay =
+      Number(carousel.dataset.interval || 5000);
+
+    let index = 0;
+    let timer = null;
+
+    function update() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
       });
 
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 1050) closeMenu();
-      });
-
-
-      /* -----------------------------------------
-         Hero background carousel
-         ----------------------------------------- */
-      const heroSlides = [...document.querySelectorAll(".hero-slide")];
-      const heroDots = document.getElementById("heroDots");
-      let heroIndex = 0;
-      let heroTimer = null;
-
-      heroSlides.forEach((_, index) => {
-        const dot = document.createElement("button");
-        dot.className = "hero-dot" + (index === 0 ? " active" : "");
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Show hero image ${index + 1}`);
-
-        dot.addEventListener("click", () => {
-          showHeroSlide(index);
-          restartHero();
-        });
-
-        heroDots.appendChild(dot);
-      });
-
-      const dots = [...heroDots.querySelectorAll(".hero-dot")];
-
-      function showHeroSlide(index) {
-        heroSlides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
-
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-
-        heroIndex = index;
+      if (count) {
+        count.textContent =
+          `${String(index + 1).padStart(2,"0")} / ${String(slides.length).padStart(2,"0")}`;
       }
+    }
 
-      function startHero() {
-        if (reducedMotion || heroSlides.length <= 1) return;
+    function move(direction) {
+      index =
+        (index + direction + slides.length) %
+        slides.length;
 
-        heroTimer = window.setInterval(() => {
-          showHeroSlide((heroIndex + 1) % heroSlides.length);
-        }, 6200);
+      update();
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
       }
+    }
 
-      function restartHero() {
-        if (heroTimer) window.clearInterval(heroTimer);
-        startHero();
-      }
+    function start() {
+      if (reducedMotion || slides.length < 2) return;
 
-      startHero();
+      stop();
 
+      timer =
+        setInterval(() => move(1), delay);
+    }
 
-      /* -----------------------------------------
-         Service image carousels
-         ----------------------------------------- */
-      document.querySelectorAll(".js-carousel").forEach((carousel) => {
-        const slides = [...carousel.querySelectorAll(".service-slide")];
-        const prev = carousel.querySelector(".prev");
-        const next = carousel.querySelector(".next");
-        const count = carousel.querySelector(".carousel-count");
+    prev?.addEventListener("click", () => {
+      move(-1);
+      start();
+    });
 
-        if (slides.length <= 1) return;
+    next?.addEventListener("click", () => {
+      move(1);
+      start();
+    });
 
-        let index = 0;
-        let timer = null;
-        const delay = Number(carousel.dataset.interval || 5000);
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", start);
 
-        const update = () => {
-          slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
-          });
-
-          if (count) {
-            count.textContent =
-              `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
-          }
-        };
-
-        const move = (direction) => {
-          index = (index + direction + slides.length) % slides.length;
-          update();
-        };
-
-        const stop = () => {
-          if (timer) {
-            window.clearInterval(timer);
-            timer = null;
-          }
-        };
-
-        const start = () => {
-          if (reducedMotion) return;
-          stop();
-          timer = window.setInterval(() => move(1), delay);
-        };
-
-        prev?.addEventListener("click", () => {
-          move(-1);
-          start();
-        });
-
-        next?.addEventListener("click", () => {
-          move(1);
-          start();
-        });
-
-        carousel.addEventListener("mouseenter", stop);
-        carousel.addEventListener("mouseleave", start);
-        carousel.addEventListener("focusin", stop);
-        carousel.addEventListener("focusout", start);
-
-        update();
-        start();
-      });
+    update();
+    start();
+  });
 
 
-      /* -----------------------------------------
-         FAQ accordion
-         ----------------------------------------- */
-      const faqButtons = [...document.querySelectorAll(".faq-question")];
+  /* ================= FAQ ================= */
 
-      faqButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const answer = button.nextElementSibling;
-          const currentlyOpen = button.getAttribute("aria-expanded") === "true";
+  const faqButtons =
+    document.querySelectorAll(".faq-question");
 
-          faqButtons.forEach((otherButton) => {
-            if (otherButton !== button) {
-              otherButton.setAttribute("aria-expanded", "false");
-              otherButton.nextElementSibling.hidden = true;
-            }
-          });
+  faqButtons.forEach(button => {
 
-          button.setAttribute("aria-expanded", String(!currentlyOpen));
-          answer.hidden = currentlyOpen;
-        });
-      });
+    button.addEventListener("click", () => {
 
+      const answer =
+        button.nextElementSibling;
 
-      /* -----------------------------------------
-         Scroll reveal
-         ----------------------------------------- */
-      const revealItems = document.querySelectorAll(".reveal");
+      const expanded =
+        button.getAttribute("aria-expanded") === "true";
 
-      if (reducedMotion || !("IntersectionObserver" in window)) {
-        revealItems.forEach((item) => item.classList.add("visible"));
-      } else {
-        const observer = new IntersectionObserver(
-          (entries, obs) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                obs.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            threshold: 0.11,
-            rootMargin: "0px 0px -35px 0px"
-          }
-        );
-
-        revealItems.forEach((item) => observer.observe(item));
-      }
-
-
-      /* -----------------------------------------
-         Infinite review tracks
-         Duplicate each review group once.
-         ----------------------------------------- */
-      document.querySelectorAll(".review-track").forEach((track) => {
-        const group = track.querySelector(".review-group");
-
-        if (group) {
-          const clone = group.cloneNode(true);
-          clone.setAttribute("aria-hidden", "true");
-          track.appendChild(clone);
+      faqButtons.forEach(other => {
+        if (other !== button) {
+          other.setAttribute("aria-expanded","false");
+          other.nextElementSibling.hidden = true;
+          other.querySelector(".plus").textContent = "+";
         }
       });
 
+      button.setAttribute(
+        "aria-expanded",
+        String(!expanded)
+      );
 
-      /* -----------------------------------------
-         Today's hours using Knoxville / Eastern time
-         ----------------------------------------- */
-      try {
-        const weekday = new Intl.DateTimeFormat("en-US", {
-          timeZone: "America/New_York",
-          weekday: "long"
-        }).format(new Date());
+      answer.hidden = expanded;
 
-        const todayHours = document.getElementById("todayHours");
+      button.querySelector(".plus").textContent =
+        expanded ? "+" : "−";
+    });
 
-        if (weekday === "Sunday") {
-          todayHours.textContent = "11:00 AM – 7:00 PM";
-        } else {
-          todayHours.textContent = "9:30 AM – 9:00 PM";
-        }
-      } catch (error) {
-        // Keep static fallback text.
-      }
+  });
 
 
-      /* -----------------------------------------
-         Copyright year
-         ----------------------------------------- */
-      document.getElementById("copyrightYear").textContent =
-        new Date().getFullYear();
-    })();
-  </script>
+  /* ================= REVIEW LOOP ================= */
+
+  document.querySelectorAll(".review-track").forEach(track => {
+
+    const set =
+      track.querySelector(".review-set");
+
+    if (set) {
+      const clone =
+        set.cloneNode(true);
+
+      clone.setAttribute("aria-hidden","true");
+
+      track.appendChild(clone);
+    }
+
+  });
+
+
+  /* ================= SCROLL REVEAL ================= */
+
+  const reveals =
+    document.querySelectorAll(".reveal");
+
+  if (
+    reducedMotion ||
+    !("IntersectionObserver" in window)
+  ) {
+
+    reveals.forEach(item =>
+      item.classList.add("visible")
+    );
+
+  } else {
+
+    const observer =
+      new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },{
+        threshold:.1,
+        rootMargin:"0px 0px -35px 0px"
+      });
+
+    reveals.forEach(item =>
+      observer.observe(item)
+    );
+  }
+
+
+  /* ================= YEAR ================= */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+})();
+</script>
 
 </body>
 </html>
